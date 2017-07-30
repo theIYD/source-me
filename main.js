@@ -2,7 +2,7 @@ const electron = require('electron')
 // Module to control application life.
 const app = electron.app
 // Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
+const {BrowserWindow, Tray} = require('electron')
 
 const path = require('path')
 const url = require('url')
@@ -21,7 +21,8 @@ function createWindow () {
           + (32 + 2) * 14 /* 14 values */,
     maximizable: false,
     resizable: false,
-    autoHideMenuBar: true
+    autoHideMenuBar: true,
+    icon: 'font.png'
   })
 
   // and load the index.html of the app.
