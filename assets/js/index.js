@@ -37,10 +37,12 @@ window.onload = () => {
     show_font_link.className = 'well';
     show_font_family_code.className = 'well';
 
+    //Call copyCode
     copyCode(show_font_link);
     copyCode(show_font_family_code);
   });
 
+  //Function to copy the code by double clicking it.
   function copyCode(textToBeCopied) {
     textToBeCopied.addEventListener('dblclick', () => {
       clipboard.writeText(textToBeCopied.textContent);
@@ -50,6 +52,7 @@ window.onload = () => {
     });
   }
 
+  //Function to change top bar color
   function changeTopBarColor (arr) {
     //console.log("We are in changeTopBarColor function");
     let top_bar = document.getElementById('bar');
@@ -59,6 +62,18 @@ window.onload = () => {
       counter = (counter+1) % arr.length;
     }, 1000);
   }
-
   changeTopBarColor(['F44336', '2196F3', '4CAF50', 'FFEB3B']);
+
+  //Limit number of options in dropdown to 4
+  let options = document.getElementById('fonts');
+  function limitOptions (opts) {
+    opts.addEventListener('mousedown', () => {
+      if(opts.length > 4){
+        opts.size = 4;
+      }
+    });
+  }
+
+  //call limitOptions
+  limitOptions(options);
 }
