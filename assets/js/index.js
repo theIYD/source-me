@@ -2,6 +2,8 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 
+const clipboard = require('electron').clipboard
+
 window.onload = () => {
 
   //Create globals.
@@ -35,15 +37,28 @@ window.onload = () => {
     show_font_link.className = 'well';
     show_font_family_code.className = 'well';
 
+    copyCode(show_font_link);
+    copyCode(show_font_family_code);
   });
 
-  function changeTopBarColor () {
-    console.log("We are in changeTopBarColor function");
-    var top_bar = document.getElementById('bar');
+  function copyCode(textToBeCopied) {
+    textToBeCopied.addEventListener('dblclick', () => {
+      clipboard.writeText(textToBeCopied.textContent);
+      let message = `${clipboard.readText()}`
+      //console.log(message);
+      alert("Copied");
+    });
+  }
+
+  function changeTopBarColor (arr) {
+    //console.log("We are in changeTopBarColor function");
+    let top_bar = document.getElementById('bar');
+    let counter = 0;
     setInterval(() => {
-      
+      top_bar.style.backgroundColor = `#${arr[counter]}`;
+      counter = (counter+1) % arr.length;
     }, 1000);
   }
 
-  changeTopBarColor();
+  changeTopBarColor(['F44336', '2196F3', '4CAF50', 'FFEB3B']);
 }
