@@ -1,0 +1,14 @@
+{
+  "name": "GoogleFontApp",
+  "version": "0.0.1",
+  "description": "A minimal Google Font application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "Idrees Dargahwala",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  }
+}
