@@ -4,11 +4,16 @@
   "description": "A minimal Google Font application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "build": "electron-packager . GoogleFontApp"
   },
   "author": "Idrees Dargahwala",
   "license": "CC0-1.0",
   "devDependencies": {
+    "asar": "^0.13.0",
     "electron": "~1.6.2"
+  },
+  "dependencies": {
+    "electron-packager": "^8.7.2"
   }
 }

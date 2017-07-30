@@ -6,7 +6,7 @@ window.onload = () => {
 
   //Create globals.
   let GOOGLE_FONTS_API_CSS = 'https://fonts.googleapis.com/css?family=';
-  let newf;
+  let get_font_name;
 
   //Get the fonts from Google Fonts API
   let json = $.getJSON(
@@ -21,44 +21,29 @@ window.onload = () => {
     }
   );
 
+  //Make reference to DOM
   let show_font_link = document.getElementById('show-font-link');
   let show_font_family_code = document.getElementById('show-font-family-code');
 
   /*Use Jquery to get the font name when 
   the user selects from the dropdown list created above */
   $('#fonts').change(function(){
-    newf = $(this).val();
-    //console.log(newf);
+    get_font_name = $(this).val();
 
-    show_font_link.innerText = `<link href="${GOOGLE_FONTS_API_CSS}${newf}" rel="stylesheet">`;
-    show_font_family_code.innerText = `font-family: '${newf}', sans-serif`;
+    show_font_link.innerText = `<link href="${GOOGLE_FONTS_API_CSS}${get_font_name}" rel="stylesheet">`;
+    show_font_family_code.innerText = `font-family: '${get_font_name}', sans-serif`;
     show_font_link.className = 'well';
     show_font_family_code.className = 'well';
 
-    /* Check if the <head> contains a stylesheet link already.
-    If yes, remove the link. 
-    while (document.getElementsByTagName('head')[0].firstChild) {
-        document.getElementsByTagName('head')[0].removeChild(document.getElementsByTagName('head')[0].firstChild);
-    }
+  });
 
-    //Generate a unique id for each link.
-    var cssId = 'myCss'; 
+  function changeTopBarColor () {
+    console.log("We are in changeTopBarColor function");
+    var top_bar = document.getElementById('bar');
+    setInterval(() => {
+      
+    }, 1000);
+  }
 
-    //Check if the same stylesheet is repeated or not.
-    if (!document.getElementById(cssId))
-    {
-        //Create a link.
-        var head  = document.getElementsByTagName('head')[0];
-        var link  = document.createElement('link');
-        link.id   = cssId;
-        link.rel  = 'stylesheet';
-        link.type = 'text/css';
-        link.href = GOOGLE_FONTS_API_CSS +''+newf;
-        head.appendChild(link);
-  }*/
-
-  //Style the existing document.
-  //document.body.style.fontFamily = newf; 
-  
-  }); 
+  changeTopBarColor();
 }
