@@ -14,15 +14,14 @@ let mainWindow
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    backgroundColor: '#fff',
     width: 450,
     height: 12 * 2 /* padding */
           + 12 + 8 /* heading */
-          + (32 + 2) * 14 /* 14 values */,
+          + (32 + 2) * 15 /* 15 values */,
     maximizable: false,
     resizable: false,
     autoHideMenuBar: true,
-    icon: 'font.png'
+    icon: 'assets/img/font.png'
   })
 
   // and load the index.html of the app.

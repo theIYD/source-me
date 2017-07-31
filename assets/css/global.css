@@ -1,0 +1,16 @@
+body {
+    background: url(../img/bg.png) center center repeat fixed;
+    overflow: hidden;
+}
+
+.top-bar {
+    width: 100%;
+    height: 8px;
+    position: relative;
+    top: 0;
+    -webkit-transition: background-color 0.5s ease-in-out;
+    -moz-transition: background-color 0.5s ease-in-out;
+    -o-transition: background-color 0.5s ease-in-out;
+    -khtml-transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+}

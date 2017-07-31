@@ -1,7 +1,4 @@
-// This file is required by the index.html file and will
-// be executed in the renderer process for that window.
-// All of the Node.js APIs are available in this process.
-
+//Import clipboard
 const clipboard = require('electron').clipboard
 
 window.onload = () => {
@@ -52,21 +49,10 @@ window.onload = () => {
     });
   }
 
-  //Function to change top bar color
-  function changeTopBarColor (arr) {
-    //console.log("We are in changeTopBarColor function");
-    let top_bar = document.getElementById('bar');
-    let counter = 0;
-    setInterval(() => {
-      top_bar.style.backgroundColor = `#${arr[counter]}`;
-      counter = (counter+1) % arr.length;
-    }, 1000);
-  }
-  changeTopBarColor(['F44336', '2196F3', '4CAF50', 'FFEB3B']);
-
   //Limit number of options in dropdown to 4
   let options = document.getElementById('fonts');
   function limitOptions (opts) {
+    console.log("LimitOptions");
     opts.addEventListener('mousedown', () => {
       if(opts.length > 4){
         opts.size = 4;
