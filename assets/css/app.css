@@ -4,9 +4,10 @@ body {
 }
 
 h2 {
-    color: #000;
+    color: inherit;
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
 }
 
 hr {

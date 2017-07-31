@@ -50,7 +50,7 @@ window.onload = () => {
   }
 
   //Limit number of options in dropdown to 4
-  let options = document.getElementById('fonts');
+  /*let options = document.getElementById('fonts');
   function limitOptions (opts) {
     console.log("LimitOptions");
     opts.addEventListener('mousedown', () => {
@@ -61,5 +61,5 @@ window.onload = () => {
   }
 
   //call limitOptions
-  limitOptions(options);
+  limitOptions(options);*/
 }
