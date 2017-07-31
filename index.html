@@ -21,6 +21,8 @@
 
     h1 {
       text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
     }
 
     .wrapper {
@@ -31,6 +33,28 @@
       display: block;
       position: relative;
       top: 50px;
+      text-align: center;
+    }
+
+    .wrap-links {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+      position: relative;
+      top: 30px;
+    }
+
+    hr {
+      width: 50%;
+    }
+
+    .wrap-links hr {
+      width: 25%;
+    }
+
+    p {
+      text-align: center;
     }
 </style>
   <div id="bar" class="top-bar"></div>
@@ -38,7 +62,16 @@
     <div class="row center-block">
       <div class="wrapper">
         <h1>Resources</h1>
-        <button class="btn btn-default"><a href="./pickers/google-fonts/font.html">Go</a></button>
+        <hr>
+        <p>A small Linux application which provides me the necessary packages &amp; tools i use on a daily basis. </p>
+        <div class="wrap-links">
+          <a href="./pickers/google-fonts/font.html"><button class="btn btn-default">Fonts</button></a>
+          <a href=""><button class="btn btn-default">CDN</button></a>
+          <hr>
+          <a href=""><button class="btn btn-default">Material Colors</button></a>
+          <a href=""><button class="btn btn-default">NPM Packages</button></a>
+        </div>
+        
       </div>
       
     </div>
