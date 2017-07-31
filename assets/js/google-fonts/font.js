@@ -28,38 +28,24 @@ window.onload = () => {
   the user selects from the dropdown list created above */
   $('#fonts').change(function(){
     get_font_name = $(this).val();
+    let _font_name;
 
-    show_font_link.innerText = `<link href="${GOOGLE_FONTS_API_CSS}${get_font_name}" rel="stylesheet">`;
-    show_font_family_code.innerText = `font-family: '${get_font_name}', sans-serif`;
+    /* Logic:
+       According to observation, 
+       font names containing white spaces are replaced by '+' in links.
+       The below code does the same, replaces white spaces by '+'.
+    */
+    if(get_font_name.indexOf(' ') >= 0) {
+        _font_name = get_font_name.split(' ').join('+');
+      //console.log(new_name);
+    } else {
+      _font_name = get_font_name;
+    }
+
+    //Display 
+    show_font_link.innerText = `<link href="${GOOGLE_FONTS_API_CSS}${_font_name}" rel="stylesheet">`;
+    show_font_family_code.innerText = `font-family: '${get_font_name}'`;
     show_font_link.className = 'well';
     show_font_family_code.className = 'well';
-
-    //Call copyCode
-    copyCode(show_font_link);
-    copyCode(show_font_family_code);
   });
-
-  //Function to copy the code by double clicking it.
-  function copyCode(textToBeCopied) {
-    textToBeCopied.addEventListener('dblclick', () => {
-      clipboard.writeText(textToBeCopied.textContent);
-      let message = `${clipboard.readText()}`
-      //console.log(message);
-      alert("Copied");
-    });
-  }
-
-  //Limit number of options in dropdown to 4
-  /*let options = document.getElementById('fonts');
-  function limitOptions (opts) {
-    console.log("LimitOptions");
-    opts.addEventListener('mousedown', () => {
-      if(opts.length > 4){
-        opts.size = 4;
-      }
-    });
-  }
-
-  //call limitOptions
-  limitOptions(options);*/
 }
