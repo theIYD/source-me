@@ -1,6 +1,8 @@
 body {
     background: url(../img/bg.png) center center repeat fixed;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .top-bar {
@@ -13,4 +15,41 @@ body {
     -o-transition: background-color 0.5s ease-in-out;
     -khtml-transition: background-color 0.5s ease-in-out;
     transition: background-color 0.5s ease-in-out;
+}
+
+.container {
+    position: relative;
+    top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+select {
+    padding: 5px 20px; 
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+select:focus {
+    outline: none;
+}
+
+option {
+    padding: 2px 0;
+    /*border-radius: 10px;*/
+    background: #fff;
+}
+
+#back-home {
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -19,7 +19,7 @@ function createWindow () {
           + 12 + 8 /* heading */
           + (32 + 2) * 15 /* 15 values */,
     maximizable: false,
-    resizable: false,
+    //resizable: false,
     autoHideMenuBar: true,
     icon: 'assets/img/font.png'
   })

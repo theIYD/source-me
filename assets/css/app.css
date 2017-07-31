@@ -3,36 +3,6 @@ body {
     /*background: #fff;*/
 }
 
-.container {
-    position: relative;
-    top: 20px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
-
-select {
-    padding: 5px 20px; 
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    background: #fff;
-    cursor: pointer;
-    width: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-}
-
-select:focus {
-    outline: none;
-}
-
-option {
-    padding: 2px 0;
-    /*border-radius: 10px;*/
-    background: #fff;
-}
-
 h2 {
     color: #000;
     text-align: center;
@@ -56,11 +26,4 @@ p {
     font-size: 14px;
     color: #000;
     text-align: center;
-}
-
-#back-home {
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
 }

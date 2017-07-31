@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CDN</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../assets/css/global.css"> 
+</head>
+<body>
+    <div id="bar" class="top-bar"></div>
+    <div class="container">
+        <div class="row center-block">
+            <div class="wrapper">
+                <h1>CDN</h1>
+                <p>A curated list of CDN's i use.</p>
+                <select id="cdns" name="combobox" class="combobox"></select>
+                <p id="show_cdn"></p>
+                <a id="back-home" href="../../index.html"><button class="btn btn-info">Home</button></a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="../../assets/js/global/jquery-3.2.1.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+  <script>
+    // You can also require other files to run in this process
+    require('../../assets/js/global/global.js')
+    require('../../assets/js/cdn/cdn.js')
+    
+  </script>
+</body>
+</html>
