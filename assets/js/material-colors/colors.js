@@ -1,3 +1,6 @@
+//Import clipboard
+const clipboard = require('electron').clipboard
+
 window.onload = () => {
 
     /* Credits: 
@@ -337,9 +340,14 @@ window.onload = () => {
             let n = document.createElement('div');
             n.id = 'm-color';
             n.className = 'color-div';
-            n.innerText = `${palette[p][v]}`;
+            //n.innerText = `${palette[p][v]}`;
             n.style.backgroundColor = `${palette[p][v]}`;
             a.appendChild(n);
-        }   
+            
+            //Set data-toggle as attribute for tooltips
+            $('.color-div').attr("data-toggle", "tooltip");
+            $('[data-toggle="tooltip"]').tooltip({title: `${palette[p][v]}`}); 
+        }
     });
-}
+
+    }

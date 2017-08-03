@@ -13,25 +13,44 @@
 <body>
 
     <style>
+        h1 {
+            font-family: 'Open Sans', sans-serif;
+        }
+
         .wrap-colors {
             display: block;
             height: auto
         }
 
         .color-div {
-            width: 50%;
-            height: 50px;
-            display: block;
+            width: 80px;
+            height: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             margin-left: auto;
-            margin-right: left;
+            margin-right: auto;
             padding: 20px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        #wrap-c {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            display: block; 
+            text-align: center;
+            margin-bottom: 50px;
         }
     </style>
     <div id="bar" class="top-bar"></div>
     <div class="container">
         <div class="row center-block">
             <div id="wrap" class="wrapper">
-                <h1>Material Colors</h1>   
+                <h1 class="text-center">Material Colors</h1>   
+                <hr style="width: 25%;">
                 <select id="colors" name="combobox" class="combobox"></select>
                 <div id="wrap-c"></div>
             </div>      
@@ -39,6 +58,7 @@
     </div>
     
     <script src="../../assets/js/global/jquery-3.2.1.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
         // You can also require other files to run in this process
         require('../../assets/js/global/global.js')
