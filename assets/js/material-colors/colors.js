@@ -1,4 +1,8 @@
 window.onload = () => {
+
+    /* Credits: 
+        https://github.com/danlevan
+    */
     let palette = { 
       'Red': { 
         '50': '#FFEBEE', 
