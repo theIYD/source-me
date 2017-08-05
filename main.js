@@ -17,7 +17,7 @@ function createWindow () {
     width: 650,
     height: 12 * 2 /* padding */
           + 12 + 8 /* heading */
-          + (32 + 2) * 15 /* 15 values */,
+          + (32 + 2) * 18 /* 15 values */,
     maximizable: false,
     //resizable: false,
     autoHideMenuBar: true,
