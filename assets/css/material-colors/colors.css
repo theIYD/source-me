@@ -1,0 +1,27 @@
+.wrap-colors {
+    display: block;
+    height: auto
+}
+
+.color-div {
+    width: 80px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+#wrap-c {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; 
+    text-align: center;
+    margin-bottom: 20px;
+}

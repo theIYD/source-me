@@ -775,6 +775,7 @@ let data = {
             displayIconDetails.innerText = `<i class="${e.path[0].className}"></i>`;
             displayIconDetails.style.display = 'block';
             displayIconDetails.style.textAlign = 'center';
+            displayIconDetails.style.width = '70%';
             displayIconDetails.style.padding = '20px';
             displayIconDetails.style.marginTop = '20px';
             displayIconDetails.style.marginLeft= 'auto';
