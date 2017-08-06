@@ -19,9 +19,9 @@ function createWindow () {
           + 12 + 8 /* heading */
           + (32 + 2) * 18 /* 15 values */,
     maximizable: false,
-    //resizable: false,
+    resizable: false,
     autoHideMenuBar: true,
-    icon: 'assets/img/font.png'
+    icon: 'assets/img/logo.png'
   })
 
   // and load the index.html of the app.
