@@ -52,4 +52,5 @@ You can download the app from [here](#).
 * [CDN](https://cdnjs.com/)
 * [IonIcons](https://ionicons.com/)
 * [jQuery](https://jquery.com/)
+* [Bootstrap](https://getbootstrap.com/)
 * [Github](https://github.com/)
