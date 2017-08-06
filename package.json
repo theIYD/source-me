@@ -1,15 +1,16 @@
 {
-  "name": "GoogleFontApp",
+  "name": "Source-Me",
   "version": "0.0.1",
-  "description": "A minimal Google Font application",
+  "description": "A small app which provides necessary tools for web development.",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package": "asar pack GoogleFontApp-linux-x64/resources/app GoogleFontApp-linux-x64/resources/app.asar",
-    "build": "electron-packager . GoogleFontApp --overwrite"
+    "package": "asar pack Source-Me -linux-x64/resources/app SourceMe-linux-x64/resources/app.asar",
+    "build": "electron-packager . Source-Me --overwrite"
   },
-  "author": "Idrees Dargahwala",
-  "license": "CC0-1.0",
+  
+  "author": "Idrees Dargahwala <dargahidrees@gmail.com>",
+  "license": "MIT",
   "devDependencies": {
     "asar": "^0.13.0",
     "electron": "~1.6.2",
