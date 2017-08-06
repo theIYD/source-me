@@ -41,7 +41,8 @@ $ npm run
 ###### Note: The app runs currently only on Linux systems.
 
 ## Download
-You can download the app from [here](#).
+You can download the app from [here](https://github.com/theIYD/source-me/releases/tag/0.0.1).
+Extract, start and enjoy !
 
 ## Thanks To
 
