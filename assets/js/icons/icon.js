@@ -737,50 +737,21 @@ let data = {
         ]
     }
 
-    /*
-        TODO:
-        Rewrite the below logic in Jquery and cleanup the things.
-    */
-
-    //console.log(data.icons[250]);
     let iconWrap = document.getElementById('icon-wrap');
     let displayIconDetails = document.createElement('div');
-    displayIconDetails.id = 'icon-details';
     displayIconDetails.className = 'bg-success';
-    displayIconDetails.style.display = 'none';
 
     for(x in data.icons) {
-        //console.log(`${data.iconClassPreFix}${data.icons[x]}`);
         let element = document.createElement('i');
-        element.id = 'ico';
         let element_wrap = document.createElement('div');
-        element_wrap.style.display = 'inline-flex';
-        element_wrap.style.alignItems = 'center';
-        element_wrap.style.justifyContent = 'center';
-        element_wrap.style.width = '60px';
-        element_wrap.style.height = '60px';
-        element_wrap.style.padding = '20px';
-        element_wrap.style.boxShadow = '0px 1px 9px -1px rgba(0,0,0,0.43)';
-        element_wrap.style.margin = '10px 10px 10px';
-        element_wrap.style.borderRadius = '5px';
-        element_wrap.style.backgroundColor = '#fff';
-        element.style.cursor = 'pointer';
+        element_wrap.className = 'wrap-element';
         element.className = `${data.iconClassPreFix}${data.icons[x]}`;
-        element.style.fontSize = '24px';
         element_wrap.appendChild(element);
         iconWrap.appendChild(element_wrap);
 
         element.addEventListener('click', (e) => {
-            //console.log(e);
             displayIconDetails.innerText = `<i class="${e.path[0].className}"></i>`;
             displayIconDetails.style.display = 'block';
-            displayIconDetails.style.textAlign = 'center';
-            displayIconDetails.style.width = '70%';
-            displayIconDetails.style.padding = '20px';
-            displayIconDetails.style.marginTop = '20px';
-            displayIconDetails.style.marginLeft= 'auto';
-            displayIconDetails.style.marginRight= 'auto';
-            displayIconDetails.style.borderRadius = '5px';
             document.getElementById('wrap-content').appendChild(displayIconDetails);
         })
     }

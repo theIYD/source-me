@@ -23,8 +23,8 @@ window.onload = () => {
   $('#cdns').change(function(){
     let option_id = $('option:selected', this).attr('id');
 
-    document.getElementById('show_cdn').innerText = cdn_link[option_id];
-    document.getElementById('show_cdn').className = 'well';
+    $('#show_cdn').text(cdn_link[option_id]);
+    $('#show_cdn').addClass('well');
   });
 
 }

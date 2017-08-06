@@ -6,8 +6,11 @@
   "scripts": {
     "start": "electron .",
     "zip": "bestzip source-me-linux-x64.zip Source-Me-linux-x64",
-    "package": "asar pack Source-Me-linux-x64/resources/app Source-Me-linux-x64/resources/app.asar",
-    "build": "electron-packager . Source-Me --overwrite"
+    "zip-win": "bestzip source-me-win-x64.zip Source-Me-win-x64",
+    "package-linux": "asar pack Source-Me-linux-x64/resources/app Source-Me-linux-x64/resources/app.asar",
+    "package-win": "asar pack Source-Me-win32-x64/resources/app Source-Me-win32-x64/resources/app.asar",
+    "build-linux": "electron-packager . Source-Me --platform=linux arch=x64 --overwrite",
+    "build-win": "electron-packager . Source-Me --platform=win32 arch=x32 --overwrite"
   },
   "author": "Idrees Dargahwala <dargahidrees@gmail.com>",
   "license": "MIT",
