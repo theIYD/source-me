@@ -1,6 +1,3 @@
-//Import clipboard
-const clipboard = require('electron').clipboard
-
 window.onload = () => {
 
   //Create globals.

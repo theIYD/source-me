@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="../../assets/css/app.css">
-    <link rel="stylesheet" href="../../assets/css/global.css"> 
+    <!-- <link rel="stylesheet" href="../../assets/css/app.css">
+    <link rel="stylesheet" href="../../assets/css/global.css"> -->
+    <link rel="stylesheet" href="../../../build/assets/css/bundle.css">
   </head>
   <body>
     <div id="bar" class="top-bar"></div>
@@ -22,16 +23,16 @@
         <p id="show-font-link"></p>
         <p id="show-font-family-code"></p>
         <p id="example">The quick brown fox jumped over the lazy dog</p>
-        <a id="back-home" href="../../index.html"><button class="btn btn-info">Home</button></a>
+        <a id="back-home" href="../../../index.html"><button class="btn btn-info">Home</button></a>
       </div>
     </div>
   </body>
 
-  <script src="../../assets/js/global/jquery-3.2.1.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+  <script src="../../../build/assets/js/global/jquery-3.2.1.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
   <script>
     // You can also require other files to run in this process
-    require('../../assets/js/global/global.js')
-    require('../../assets/js/google-fonts/font.js')
+    require('../../../build/assets/js/global/global.js')
+    require('../../../build/assets/js/google-fonts/font.js')
     
   </script>
 </html>
