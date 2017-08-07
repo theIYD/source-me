@@ -42,15 +42,34 @@ window.onload = () => {
       _font_name = get_font_name;
     }
 
-    /*Display 
-    show_font_link.innerText = `<link href="${GOOGLE_FONTS_API_CSS}${_font_name}" rel="stylesheet">`;
-    show_font_family_code.innerText = `font-family: '${get_font_name}'`;
-    show_font_link.className = 'well';
-    show_font_family_code.className = 'well'; */
-
     $('#show-font-link').text(`<link href="${GOOGLE_FONTS_API_CSS}${_font_name}" rel="stylesheet">`);
     $('#show-font-family-code').text(`font-family: '${get_font_name}'`);
     $('#show-font-link').addClass('well');
     $('#show-font-family-code').addClass('well');
+
+    /* Check if the <head> contains a stylesheet link already.
+    If yes, remove the link. */
+    while (document.getElementById('myCss')) {
+        $('#myCss').remove();      
+    }
+
+    //Generate a unique id for each link.
+    var cssId = 'myCss'; 
+
+    //Check if the same stylesheet is repeated or not.
+    if (!document.getElementById(cssId))
+    {
+        //Create a link.
+        var head  = document.getElementsByTagName('head')[0];
+        var link  = document.createElement('link');
+        link.id   = cssId;
+        link.rel  = 'stylesheet';
+        link.type = 'text/css';
+        link.href = GOOGLE_FONTS_API_CSS +''+_font_name;
+        head.appendChild(link);
+  }
+
+  //Style the example paragraph
+  $('#example').css({'font-family': `${get_font_name}`, 'font-size': '22px'});
   });
 }
