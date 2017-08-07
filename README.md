@@ -57,7 +57,7 @@ $ cd source-me
 $ npm install 
 
 # Start the app
-$ npm run
+$ npm start
 
 ```
 
