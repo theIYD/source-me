@@ -1,5 +1,28 @@
 ![Image](art/logo.jpg)
 
+<p align="center">
+
+<a href="https://github.com/theIYD/source-me/issues">
+  <img src="https://img.shields.io/github/issues/theIYD/source-me.svg">
+</a>
+
+<a href="https://github.com/theIYD/source-me/network">
+  <img src="https://img.shields.io/github/forks/theIYD/source-me.svg">
+</a>
+
+<a href="https://github.com/theIYD/source-me/stargazers">
+  <img src="https://img.shields.io/github/stars/theIYD/source-me.svg">
+</a>
+
+<a href="https://raw.githubusercontent.com/theIYD/source-me/master/LICENSE">
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg">
+</a>
+
+<a href="https://twitter.com/intent/tweet?text=Wow:&url=%5Bobject%20Object%5D">
+  <img src="https://img.shields.io/twitter/url/https/github.com/theIYD/source-me.svg?style=social">
+</a>
+</p>
+
 # Source Me
 
 <p align="left"><em>Source Me</em> is a small application which provides the necessary tools while developing a web application. The need for this application was because i was too lazy to go to the web & search for the packages, or fonts, or material design colors. So a small app was to be built to provide the necessary resources in a single click ! <br>The application is built on <a href="https://electron.atom.io/">Electron.</a></p>
