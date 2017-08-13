@@ -47,13 +47,6 @@ option {
     background: #fff;
 }
 
-#back-home {
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 p {
     font-family: 'Open Sans', sans-serif;
 }

@@ -38,6 +38,7 @@
 * **CDN:** A list of content delivery networks from *cdnjs*.
 * **Material Colors:** A curated list of material colors from Google's Material Design.
 * **Icons:** A container full of icons extracted from *[IonIcons](https://ionicons.com)*.
+* **Epsum:** It generates epsum paragraphs with the help of *baconepsum* API.
 
 
 ## How To Use
@@ -76,5 +77,6 @@ Extract, start and enjoy !
 * [CDN](https://cdnjs.com/)
 * [IonIcons](https://ionicons.com/)
 * [jQuery](https://jquery.com/)
+* [BaconEpsum](https://baconipsum.com)
 * [Bootstrap](https://getbootstrap.com/)
 * [Github](https://github.com/)

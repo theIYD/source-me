@@ -3,34 +3,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CDN</title>
+    <title>Epsum Generator</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="../../assets/css/global.css"> 
-    <link rel="stylesheet" href="../../assets/css/cdn/cdn.css"> -->
+
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="../../../build/assets/css/bundle.css">
-    <link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet">
 </head>
 <body>
     <div id="bar" class="top-bar"></div>
     <div class="container">
         <div class="row center-block">
-            <div class="wrapper">
-                <h2><a style="position: relative; left: -20px; font-size: 20px; color: #000" href="../../../index.html"><i class="ion-arrow-left-c"></i></a>CDN</h2>
-                <hr>
-                <p style="color: #999;">A curated list of CDN's from <em>cdnjs</em></p>
-                <select id="cdns" name="combobox" class="combobox"></select>
-                <p style="font-size: 14px;" id="show_cdn"></p>
-            </div>
+            <h2><a style="position: relative; left: -20px; font-size: 20px; color: #000" href="../../../index.html"><i class="ion-arrow-left-c"></i></a>Epsum Generator</h2>
+            <hr>
+            <p style="color: #999; margin-bottom: 30px;">Generate Epsum paragraphs on a single click.</p>
+            <a style="display: block; text-align: center; margin-left: auto; margin-right: auto;" id="back-home"><button id="generate" role="button" class="btn btn-success">Generate</button></a>
+            <div style="margin-top: 25px;" id="epsum"></div>
         </div>
     </div>
+
+
+
+
+
     <script src="../../../build/assets/js/global/jquery-3.2.1.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
   <script>
     // You can also require other files to run in this process
     require('../../../build/assets/js/global/global.js')
-    require('../../../build/assets/js/cdn/cdn.js')
+    require('../../../build/assets/js/epsum/epsum.js')
     
   </script>
 </body>
