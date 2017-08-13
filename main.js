@@ -21,7 +21,7 @@ function createWindow () {
     maximizable: false,
     resizable: false,
     autoHideMenuBar: true,
-    icon: 'assets/img/logo.png'
+    icon: 'build/assets/img/logo.png'
   })
 
   // and load the index.html of the app.
