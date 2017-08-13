@@ -27,9 +27,11 @@
 
 <p align="left"><em>Source Me</em> is a small application which provides the necessary tools while developing a web application. The need for this application was because i was too lazy to go to the web & search for the packages, or fonts, or material design colors. So a small app was to be built to provide the necessary resources in a single click ! <br>The application is built on <a href="https://electron.atom.io/">Electron.</a></p>
 
+#### Show some &hearts; by starring the repository &amp; helping me to grow the app more.
+
 ## Preview
 
-![](art/preview.gif)
+![](art/preview.png)
 
 
 ## Features
