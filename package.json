@@ -17,6 +17,14 @@
   },
   "author": "Idrees Dargahwala <dargahidrees@gmail.com>",
   "license": "MIT",
+
+  "repository": "https://github.com/theIYD/source-me#readme",
+  "keywords": [
+    "Source Me",
+    "Web Toolkit",
+    "Electron"  
+  ],
+
   "devDependencies": {
     "asar": "^0.13.0",
     "electron": "~1.6.2",
