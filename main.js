@@ -6,6 +6,9 @@ const {BrowserWindow, Tray} = require('electron')
 
 const path = require('path')
 const url = require('url')
+const Menu = electron.Menu
+const ipc = electron.ipcMain
+const shell = require('electron').shell
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -71,3 +74,48 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+let appIcon = null
+let iconName
+
+ipc.on('put-in-tray',  (event) => {
+
+  if(process.platform === 'win32') {
+    iconName = '/build/assets/img/logo.ico';
+
+  } else if(process.platform === 'darwin') {
+    iconName = '/build/assets/img/logo.icns';
+
+  } else {
+    iconName = '/build/assets/img/logo.png';
+  }
+
+  const iconPath = path.join(__dirname, iconName)
+  appIcon = new Tray(iconPath)
+  const contextMenu = Menu.buildFromTemplate([{
+    label: 'About',
+    click: () => {
+      shell.openExternal('https://github.com/theIYD');
+    },
+  },
+
+  {
+    label: 'Quit',
+    click: () => {
+      //event.sender.send('tray-removed')
+      app.quit();
+    }
+  }])
+
+  appIcon.setToolTip('Source Me in tray.')
+  appIcon.setContextMenu(contextMenu)
+})
+
+ipc.on('remove-tray', () => {
+  appIcon.destroy()
+})
+
+app.on('window-all-closed', () => {
+  if (appIcon) {
+    appIcon.destroy()
+  } 
+})
