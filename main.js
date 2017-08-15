@@ -13,16 +13,20 @@ let mainWindow
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({
+
+  let windowOptions = {
     width: 650,
-    height: 12 * 2 /* padding */
-          + 12 + 8 /* heading */
-          + (32 + 2) * 18 /* 15 values */,
+    height: 12 * 2 + 12 + 8 + (32 + 2) * 18,
     maximizable: false,
     resizable: false,
     autoHideMenuBar: true
-  })
-  
+  }
+
+  if(process.platform === 'linux') {
+    windowOptions.icon = path.join(__dirname, '/build/assets/img/logo.png');
+  }
+
+  mainWindow = new BrowserWindow(windowOptions);
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
