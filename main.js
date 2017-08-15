@@ -20,9 +20,9 @@ function createWindow () {
           + (32 + 2) * 18 /* 15 values */,
     maximizable: false,
     resizable: false,
-    autoHideMenuBar: true,
-    icon: 'build/assets/img/logo.png'
+    autoHideMenuBar: true
   })
+  
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({

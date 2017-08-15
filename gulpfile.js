@@ -25,7 +25,7 @@ gulp.task('delete', () => {
 });
 
 //Keep a default task
-gulp.task('default', ['copy', 'concat-css']);
+gulp.task('default', ['delete','copy', 'concat-css']);
 
 //Watch for file changes
 gulp.task('watch', () => {
