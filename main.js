@@ -38,9 +38,6 @@ function createWindow () {
     slashes: true
   }))
 
-  // Open the DevTools.
-    //mainWindow.webContents.openDevTools()
-
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
     // Dereference the window object, usually you would store windows
@@ -91,11 +88,39 @@ ipc.on('put-in-tray',  (event) => {
 
   const iconPath = path.join(__dirname, iconName)
   appIcon = new Tray(iconPath)
-  const contextMenu = Menu.buildFromTemplate([{
+  const contextMenu = Menu.buildFromTemplate([
+
+  {
     label: 'About',
     click: () => {
       shell.openExternal('https://github.com/theIYD');
     },
+  },
+
+  {
+    label: 'Other Resources', 
+    submenu: [
+      {
+        label: 'JSPlaygrounds',
+        click: () => {
+          shell.openExternal('https://stephengrider.github.io/JSPlaygrounds/');
+        }
+      },
+
+      {
+        label: 'W3Schools',
+        click: () => {
+          shell.openExternal('https://www.w3schools.com/');
+        }
+      }, 
+
+      {
+        label: 'CSS Tricks',
+        click: () => {
+          shell.openExternal('https://css-tricks.com/');
+        }
+      }
+    ]
   },
 
   {
