@@ -19,7 +19,7 @@ ipc.on('tray-removed', function () {
   ipc.send('remove-tray')
   trayOn = false
   console.log('Tray removed.')
-})
+    })
 });
 
   

@@ -8,7 +8,8 @@ const path = require('path')
 const url = require('url')
 const Menu = electron.Menu
 const ipc = electron.ipcMain
-const shell = require('electron').shell
+const dialog = electron.dialog
+const shell = electron.shell
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -71,6 +72,7 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
 let appIcon = null
 let iconName
 
@@ -93,7 +95,7 @@ ipc.on('put-in-tray',  (event) => {
   {
     label: 'About',
     click: () => {
-      shell.openExternal('https://github.com/theIYD');
+      shell.openExternal('https://theiyd.github.io/source-me/index.html');
     },
   },
 
