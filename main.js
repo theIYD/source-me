@@ -10,6 +10,7 @@ const Menu = electron.Menu
 const ipc = electron.ipcMain
 const dialog = electron.dialog
 const shell = electron.shell
+let quote = require('./build/assets/js/quote.js');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -97,6 +98,13 @@ ipc.on('put-in-tray',  (event) => {
     click: () => {
       shell.openExternal('https://theiyd.github.io/source-me/index.html');
     },
+  },
+
+  {
+    label: 'Quote of the Day',
+    click: () => {
+      quote.quoteWindow();
+    }
   },
 
   {

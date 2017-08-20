@@ -1,0 +1,61 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quote of the Day</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
+
+</head>
+<style>
+    body {
+        background: url('../../../build/assets/img/quote-bg.jpg') no-repeat center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-app-region: drag
+    }
+
+    .container {
+        width: 85% !important;
+    }
+
+    #quoteOfTheDay {
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+        color: #fff;
+        line-height: 0.9;
+    }
+
+    #close {
+        color: #fff;   
+    }
+
+    a {-webkit-app-region: no-drag;}
+</style>
+<body>
+    <div class="container" style="text-align: center;">
+        <h2 id="quoteOfTheDay"></h2>
+        <a href="javascript:window.close()"><i id="close" class="ion-android-close"></i></a>
+    </div>
+    
+    <script src="../../../build/assets/js/global/jquery-3.2.1.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+    <script>
+        $.getJSON('http://quotes.rest/qod.json?category=inspire', 
+            (quote) => {
+                //console.log(quote.contents.quotes[0].quote);
+                $('#quoteOfTheDay').text('"' + quote.contents.quotes[0].quote + '"');
+            }
+        );
+    </script>
+    <script>
+        require('../../../build/assets/js/quote.js')
+    </script>
+</body>
+</html>
