@@ -10,6 +10,7 @@ const Menu = electron.Menu
 const ipc = electron.ipcMain
 const dialog = electron.dialog
 const shell = electron.shell
+const globalShortcut = electron.globalShortcut
 let quote = require('./build/assets/js/quote.js');
 
 // Keep a global reference of the window object, if you don't, the window will
@@ -24,7 +25,8 @@ function createWindow () {
     height: 12 * 2 + 12 + 8 + (32 + 2) * 18,
     maximizable: false,
     resizable: false,
-    autoHideMenuBar: true
+    autoHideMenuBar: true,
+    frame: false
   }
 
   if(process.platform === 'linux') {
@@ -53,6 +55,11 @@ function createWindow () {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
+app.on('ready', () => {
+  globalShortcut.register('CommandOrControl+Alt+Q', function () {
+    mainWindow.close();
+  })
+})
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
@@ -69,6 +76,10 @@ app.on('activate', function () {
   if (mainWindow === null) {
     createWindow()
   }
+})
+
+app.on('will-quit', () => {
+  globalShortcut.unregisterAll();
 })
 
 // In this file you can include the rest of your app's specific main process
