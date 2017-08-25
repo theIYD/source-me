@@ -21,12 +21,13 @@ function createWindow () {
   // Create the browser window.
 
   let windowOptions = {
-    width: 650,
-    height: 12 * 2 + 12 + 8 + (32 + 2) * 18,
-    maximizable: false,
-    resizable: false,
+    width: 1080,
+    minWidth: 680,
+    height: 840,
+    //maximizable: false,
+    //resizable: false,
     autoHideMenuBar: true,
-    frame: false
+    //frame: false
   }
 
   if(process.platform === 'linux') {
