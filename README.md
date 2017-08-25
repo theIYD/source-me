@@ -70,6 +70,12 @@ $ npm start
 You can download the app from [here](https://github.com/theIYD/source-me/releases/tag/0.0.1).
 Extract, start and enjoy !
 
+## Contribute
+If the application has any kind of bugs, feel free to open an issue anytime. We will look into it & come up with a solution. 
+Create a new pull request if you have fixed any kind of bugs. 
+
+The request would be merged if it fixes the bug & does not disturb the whole application in any way. 
+
 ## Thanks To
 
 * [Electron.js](https://electron.atom.io/)

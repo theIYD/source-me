@@ -11,7 +11,7 @@ const ipc = electron.ipcMain
 const dialog = electron.dialog
 const shell = electron.shell
 const globalShortcut = electron.globalShortcut
-let quote = require('./build/assets/js/quote.js');
+let quote = require('./build/assets/js/quote.js')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -30,11 +30,11 @@ function createWindow () {
     //frame: false
   }
 
-  if(process.platform === 'linux') {
-    windowOptions.icon = path.join(__dirname, '/build/assets/img/logo.png');
+  if (process.platform === 'linux') {
+    windowOptions.icon = path.join(__dirname, '/build/assets/img/logo.png')
   }
 
-  mainWindow = new BrowserWindow(windowOptions);
+  mainWindow = new BrowserWindow(windowOptions)
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
@@ -58,7 +58,7 @@ function createWindow () {
 app.on('ready', createWindow)
 app.on('ready', () => {
   globalShortcut.register('CommandOrControl+Alt+Q', function () {
-    mainWindow.close();
+    mainWindow.close()
   })
 })
 
@@ -80,7 +80,7 @@ app.on('activate', function () {
 })
 
 app.on('will-quit', () => {
-  globalShortcut.unregisterAll();
+  globalShortcut.unregisterAll()
 })
 
 // In this file you can include the rest of your app's specific main process
@@ -89,69 +89,64 @@ app.on('will-quit', () => {
 let appIcon = null
 let iconName
 
-ipc.on('put-in-tray',  (event) => {
-
-  if(process.platform === 'win32') {
-    iconName = '/build/assets/img/logo.ico';
-
-  } else if(process.platform === 'darwin') {
-    iconName = '/build/assets/img/logo.icns';
-
+ipc.on('put-in-tray', (event) => {
+  if (process.platform === 'win32') {
+    iconName = '/build/assets/img/logo.ico'
   } else {
-    iconName = '/build/assets/img/logo.png';
+    iconName = '/build/assets/img/logo.png'
   }
 
   const iconPath = path.join(__dirname, iconName)
   appIcon = new Tray(iconPath)
   const contextMenu = Menu.buildFromTemplate([
 
-  {
-    label: 'About',
-    click: () => {
-      shell.openExternal('https://theiyd.github.io/source-me/index.html');
-    },
-  },
-
-  {
-    label: 'Quote of the Day',
-    click: () => {
-      quote.quoteWindow();
-    }
-  },
-
-  {
-    label: 'Other Resources', 
-    submenu: [
-      {
-        label: 'JSPlaygrounds',
-        click: () => {
-          shell.openExternal('https://stephengrider.github.io/JSPlaygrounds/');
-        }
-      },
-
-      {
-        label: 'W3Schools',
-        click: () => {
-          shell.openExternal('https://www.w3schools.com/');
-        }
-      }, 
-
-      {
-        label: 'CSS Tricks',
-        click: () => {
-          shell.openExternal('https://css-tricks.com/');
-        }
+    {
+      label: 'About',
+      click: () => {
+        shell.openExternal('https://theiyd.github.io/source-me/index.html')
       }
-    ]
-  },
+    },
 
-  {
-    label: 'Quit',
-    click: () => {
-      //event.sender.send('tray-removed')
-      app.quit();
-    }
-  }])
+    {
+      label: 'Quote of the Day',
+      click: () => {
+        quote.quoteWindow()
+      }
+    },
+
+    {
+      label: 'Other Resources',
+      submenu: [
+        {
+          label: 'JSPlaygrounds',
+          click: () => {
+            shell.openExternal('https://stephengrider.github.io/JSPlaygrounds/')
+          }
+        },
+
+        {
+          label: 'W3Schools',
+          click: () => {
+            shell.openExternal('https://www.w3schools.com/')
+          }
+        },
+
+        {
+          label: 'CSS Tricks',
+          click: () => {
+            shell.openExternal('https://css-tricks.com/')
+          }
+        }
+      ]
+    },
+
+    {
+      label: 'Quit',
+      click: () => {
+      // event.sender.send('tray-removed')
+        app.quit()
+      }
+    }])
 
   appIcon.setToolTip('Source Me in tray.')
   appIcon.setContextMenu(contextMenu)
@@ -164,5 +159,5 @@ ipc.on('remove-tray', () => {
 app.on('window-all-closed', () => {
   if (appIcon) {
     appIcon.destroy()
-  } 
+  }
 })
