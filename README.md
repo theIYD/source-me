@@ -88,6 +88,11 @@ The request would be merged if it fixes the bug & does not disturb the whole app
 * [BaconEpsum](https://baconipsum.com)
 * [Bootstrap](https://getbootstrap.com/)
 * [Github](https://github.com/)
+* [W3Schools](https://www.w3schools.com/)
+* [JSPlaygrounds](https://stephengrider.github.io/JSPlaygrounds/)
+* [CSS Tricks](https://css-tricks.com/)
+
+
 
 <br>
 
