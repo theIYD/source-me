@@ -5,6 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
+    "begin": "gulp delete && gulp copy && gulp concat-css && npm start",
     "zip-linux": "bestzip source-me-linux-x64.zip Source-Me-linux-x64",
     "zip-win": "bestzip source-me-win-x64.zip Source-Me-win32-x64",
     "zip-mac": "bestzip source-me-darwin-x64.zip Source-Me-darwin-x64",
