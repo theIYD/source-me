@@ -67,7 +67,7 @@ $ npm start
 ###### Note: The app doesn't behave properly on Mac systems as reported by one of the users. 
 
 ## Download
-You can download the app from [here](https://github.com/theIYD/source-me/releases/tag/0.0.1).
+You can download the app from [here](https://github.com/theIYD/source-me/releases).
 Extract, start and enjoy !
 
 ## Contribute
