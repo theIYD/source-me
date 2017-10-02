@@ -9,7 +9,8 @@ let generatedOutput = document.querySelector('.generated');
 
 /* 
     Might be a lengthy workaround.
-    TODO: 
+    TODO: Find an effective solution by not
+    repeating the code.
 */
 let x = 0;
 let y = 0;
@@ -35,6 +36,6 @@ spread.addEventListener('input', function(){
 
 function shadow(xOffset, yOffset, blur, spread) {
     sample.setAttribute("style", `box-shadow: ${xOffset}px ${yOffset}px ${blur}px ${spread}px rgba(0,0,0,0.75)`);
-    generatedOutput.innerHTML = sample.getAttribute('style');
+    generatedOutput.innerHTML = `-webkit-${sample.getAttribute('style')}<br>-moz-${sample.getAttribute('style')}<br>-o-${sample.getAttribute('style')}<br>${sample.getAttribute('style')}`;
 }
 

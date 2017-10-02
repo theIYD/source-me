@@ -11,6 +11,49 @@
     <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet" href="../../../build/assets/css/bundle.css">
     <link href="https://fonts.googleapis.com/css?family=Open Sans" rel="stylesheet">
+
+    <style>
+        .container {
+            width: 70%;
+        }
+        .range-sliders {
+            display: block;
+            padding: 20px 0;
+        }
+        .wrap-sample {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        #sample {
+            text-align: center;
+            display: block;
+        }
+        input[type=range] {
+            width: 50%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            appearance: none;
+            -webkit-appearance: none;
+            height: 8px;
+            background: #d3d3d3;
+            border-radius: 5px; 
+            margin-left: auto;
+            margin-right: auto;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%; 
+            background: #4CAF50;
+            cursor: pointer;
+        }
+        input[type=range]:focus {
+            outline: none;
+            border: none;
+        }
+    </style>
 </head>
 <body>
     <div id="bar" class="top-bar"></div>
@@ -24,12 +67,18 @@
                     <img class="img-responsive" id="sample" width="200" height="200" src="http://www.germinador.com/simple/wp-content/uploads/2013/09/500x500-490x490.gif" alt="Sample Image">
                 </div>
                 <div class="range-sliders">
+                    <label for="offset-x">Horizontal</label>
                     <input id="offset-x" type="range" max="200" min="-200" value="0">
+                    <label for="offset-y">Vertical</label>
                     <input id="offset-y" type="range" max="200" min="-200" value="0">
+                    <label for="blur">Blurr</label>
                     <input id="blur" type="range" max="300" min="0" value="0">
+                    <label for="spread">Spread</label>
                     <input id="spread" type="range" max="200" min="-200" value="0">
                 </div>
-                <p class="generated"></p>
+                <div class="panel panel-success">
+                    <p class="panel-body generated"></p>
+                </div>
             </div>
         </div>
     </div>

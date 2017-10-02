@@ -36,6 +36,6 @@ spread.addEventListener('input', function(){
 
 function shadow(xOffset, yOffset, blur, spread) {
     sample.setAttribute("style", `box-shadow: ${xOffset}px ${yOffset}px ${blur}px ${spread}px rgba(0,0,0,0.75)`);
-    generatedOutput.innerHTML = sample.getAttribute('style');
+    generatedOutput.innerHTML = `-webkit-${sample.getAttribute('style')}<br>-moz-${sample.getAttribute('style')}<br>-o-${sample.getAttribute('style')}<br>${sample.getAttribute('style')}`;
 }
 
