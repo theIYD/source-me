@@ -7,17 +7,13 @@ const url = require('url')
 const Menu = electron.Menu
 const ipc = electron.ipcMain
 const dialog = electron.dialog
-const shell = electron.shell
 const globalShortcut = electron.globalShortcut
 let quote = require('./build/assets/js/quote.js')
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
 
 function createWindow () {
   // Create the browser window.
-
   let windowOptions = {
     width: 1080,
     minWidth: 680,
@@ -97,7 +93,7 @@ ipc.on('put-in-tray', (event) => {
     {
       label: 'About',
       click: () => {
-        shell.openExternal('https://theiyd.github.io/source-me/index.html')
+        openSourcesInBrowserWindows('https://theiyd.github.io/source-me/index.html')
       }
     },
 
