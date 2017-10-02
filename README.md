@@ -41,6 +41,8 @@
 * **Material Colors:** A curated list of material colors from Google's Material Design.
 * **Icons:** A container full of icons extracted from *[IonIcons](https://ionicons.com)*.
 * **Epsum:** It generates epsum paragraphs with the help of *baconepsum* API.
+* **JSPlaygrounds:** An area developed by <a href="https://github.com/StephenGrider/JSPlaygrounds">Stephen Grider</a> to code Javascript & see the output in realtime.
+* **W3Schools:** A great resource for beginners as well as experts in the field of web.
 
 
 ## How To Use
