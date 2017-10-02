@@ -12,7 +12,7 @@
     "package-linux": "asar pack Source-Me-linux-x64/resources/app Source-Me-linux-x64/resources/app.asar",
     "package-win": "asar pack Source-Me-win32-x64/resources/app Source-Me-win32-x64/resources/app.asar",
     "build-linux": "electron-packager . Source-Me --platform=linux arch=x64 --overwrite",
-    "build-mac": "electron-packager . Source-Me --overwrite --platform=darwin --arch=x64 --icon=build/assets/img/logo.icns --prune=true",
+    "build-mac": "electron-packager . Source-Me --overwrite --platform=darwin --arch=x64 --icon=build/assets/img/logo.icns",
     "build-win": "electron-packager . Source-Me --platform=win32 arch=x32 --overwrite --icon=build/assets/img/logo.ico",
     "build": "npm run build-linux && npm run build-win && npm run build-mac && npm run package-linux && npm run package-win && npm run zip-linux && npm run zip-win && npm run zip-mac"
   },

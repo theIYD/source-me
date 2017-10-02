@@ -1,7 +1,5 @@
 const electron = require('electron')
-// Module to control application life.
 const app = electron.app
-// Module to create native browser window.
 const {BrowserWindow, Tray} = require('electron')
 
 const path = require('path')
@@ -24,10 +22,7 @@ function createWindow () {
     width: 1080,
     minWidth: 680,
     height: 840,
-    //maximizable: false,
-    //resizable: false,
-    autoHideMenuBar: true,
-    //frame: false
+    autoHideMenuBar: true
   }
 
   if (process.platform === 'linux') {
@@ -45,16 +40,10 @@ function createWindow () {
 
   // Emitted when the window is closed.
   mainWindow.on('closed', function () {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
     mainWindow = null
   })
 }
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
 app.on('ready', createWindow)
 app.on('ready', () => {
   globalShortcut.register('CommandOrControl+Alt+Q', function () {
@@ -64,16 +53,12 @@ app.on('ready', () => {
 
 // Quit when all windows are closed.
 app.on('window-all-closed', function () {
-  // On OS X it is common for applications and their menu bar
-  // to stay active until the user quits explicitly with Cmd + Q
   if (process.platform !== 'darwin') {
     app.quit()
   }
 })
 
 app.on('activate', function () {
-  // On OS X it's common to re-create a window in the app when the
-  // dock icon is clicked and there are no other windows open.
   if (mainWindow === null) {
     createWindow()
   }
@@ -83,12 +68,21 @@ app.on('will-quit', () => {
   globalShortcut.unregisterAll()
 })
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
+//a function to open external links in BrowserWindows
+function openSourcesInBrowserWindows(url) {
+    let win = new BrowserWindow({ 
+      width: 1200, 
+      height: 720
+     })
+    win.on('close', function () { win = null })
+    win.loadURL(url)
+    win.show()
+}
 
 let appIcon = null
 let iconName
 
+//put icon in tray
 ipc.on('put-in-tray', (event) => {
   if (process.platform === 'win32') {
     iconName = '/build/assets/img/logo.ico'
@@ -120,21 +114,21 @@ ipc.on('put-in-tray', (event) => {
         {
           label: 'JSPlaygrounds',
           click: () => {
-            shell.openExternal('https://stephengrider.github.io/JSPlaygrounds/')
+            openSourcesInBrowserWindows('https://stephengrider.github.io/JSPlaygrounds/')
           }
         },
 
         {
           label: 'W3Schools',
           click: () => {
-            shell.openExternal('https://www.w3schools.com/')
+            openSourcesInBrowserWindows('https://www.w3schools.com/')
           }
         },
 
         {
           label: 'CSS Tricks',
           click: () => {
-            shell.openExternal('https://css-tricks.com/')
+            openSourcesInBrowserWindows('https://css-tricks.com/');
           }
         }
       ]
@@ -143,7 +137,6 @@ ipc.on('put-in-tray', (event) => {
     {
       label: 'Quit',
       click: () => {
-      // event.sender.send('tray-removed')
         app.quit()
       }
     }])
