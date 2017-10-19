@@ -1,5 +1,3 @@
-console.log("Meta Tags");
-
 function getSelectors(selector) {
     return document.querySelector(selector);
 }
