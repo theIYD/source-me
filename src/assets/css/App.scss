@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Titillium Web', sans-serif
+}
+
+.navbar {
+  width: 100%;
+  background: #283593;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    li {
+      display: inline-block;
+
+      a{
+        display: block;
+        color: #ffffff;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.container {
+  width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about {
+  text-align: center;
+  img {
+    margin-top: 20px;
+    width: 300px;
+    height: 300px;
+  }
+  .about-sourceme {
+    margin-top: 20px;
+    p {
+        line-height: 1.2;
+        color: #494C4E;
+        font-family: 'Roboto', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+    }
+  }
+}
