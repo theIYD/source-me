@@ -36,7 +36,6 @@
   },
   "dependencies": {
     "node-sass": "^4.5.3",
-    "react-materialize": "^1.0.16",
     "react-router-dom": "^4.2.2",
     "sass-loader": "^6.0.6",
     "webfontloader": "^1.6.28"

@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import Page1 from './Page1';
 import Page2 from './Page2';
-import Home from './Home';
+import About from './About';
 
 import {
   BrowserRouter as Router,
@@ -15,7 +15,7 @@ const routes = [
   {
     path: '/',
     exact: true,
-    main: () => <Home />
+    main: () => <About />
   },
   {
     path: '/page1',
@@ -42,8 +42,6 @@ class App extends React.Component {
           </div>
           <div className="content container">
           {routes.map((route, index) => (
-            // Render more <Route>s with the same paths as
-            // above, but different components this time.
             <Route
               key={index}
               path={route.path}
