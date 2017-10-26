@@ -5,7 +5,16 @@ class About extends React.Component {
 
     render() {
       return (
-        <div className="about">
+         <div className="about" style={{
+           position: 'absolute',
+           top: '0',
+           left: '0',
+           right: '0',
+           bottom: '0',
+           overflowX: 'hidden',
+           overflowY: 'auto',
+           padding: '0 2em'
+         }}>
           <img src={logo} className="logo" />
           <h1>Source Me</h1>
           <hr style={{

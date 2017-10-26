@@ -5,49 +5,99 @@
   font-family: 'Titillium Web', sans-serif
 }
 
-.navbar {
+html {
+  height: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+body {
+  height: 100%;
+  display: flex;
+}
+
+#root {
   width: 100%;
-  background: #283593;
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+  height: 100%;
+}
 
-    li {
-      display: inline-block;
+.navbar {
+  width: 340px;
+  flex: 3;
+  background: hsl(0,0%,96%);
+  padding: 1em 0 2.5em 0;
+  border-right: 2px solid hsl(0,0%,88%); 
+  max-height: 800px;
+  overflow-x: hidden;
+  overflow-y: auto;
 
-      a{
-        display: block;
-        color: #ffffff;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: hsl(0,0%,96%);
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color: #7986CB;
+    border-radius: 10px;
+  }
+}
 
-        &:hover {
-          text-decoration: underline;
-        }
-      }
+.nav-category {
+  margin: .2em 0;
+  padding-left: 2rem;
+  font-size: 11px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.learning {
+  padding-top: 2.5em;
+}
+
+.nav-sub-category {
+  margin: 2em 0 1em 0;
+  padding-left: 3rem;
+  font-size: 13px;
+}
+
+.nav-item {
+  padding: 0.25em 0 0.25em 0;
+
+  h5 {
+    padding: .3rem 0 .3rem .3rem;
+    padding-left: calc(2rem + 16px + .5rem);
+    width: 100%;
+    line-height: 2;
+    text-align: left;
+    color: hsl(0,0%,44%);
+    font-weight: 500;
+
+    &:hover {
+      background: #283593;
+      color: #ffffff;
+      cursor: pointer;
+    }
+    
+    a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
     }
   }
 }
 
 .container {
-  width: 750px;
-  margin-left: auto;
-  margin-right: auto;
+  flex: 5;
+  position: relative;
+  opacity: 1;
+  min-height: 100%;
 }
 
 .about {
   text-align: center;
   img {
     margin-top: 20px;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
   }
   .about-sourceme {
     margin-top: 20px;
@@ -55,7 +105,7 @@
         line-height: 1.2;
         color: #494C4E;
         font-family: 'Roboto', sans-serif;
-        font-size: 18px;
+        font-size: 17px;
         font-weight: 400;
     }
   }
