@@ -2,6 +2,7 @@ import '../assets/css/App.scss';
 import React, { Component } from 'react';
 
 import CDN from './sub-components/CDN';
+import Font from './sub-components/Font';
 import About from './About';
 
 import {
@@ -17,9 +18,9 @@ const routes = [
     main: () => <About />
   },
   {
-    path: '/colors',
+    path: '/font',
     exact: true,
-    main: () => <Page2 />
+    main: () => <Font url='https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBwIX97bVWr3-6AIUvGkcNnmFgirefZ6Sw' />
   },
   {
     path: '/cdn',
@@ -43,13 +44,13 @@ class App extends React.Component {
               <h3>Tools &amp; Utilities</h3>
             </div>
             <div className="nav-item">
-              <h5><Link to="/#">Material Colors from <strong>Google</strong></Link></h5>
+              <h5><Link to="/##">Material Colors from <strong>Google</strong></Link></h5>
             </div>
             <div className="nav-item">
               <h5><Link to="/cdn">Content Delivery Networks Library from <strong>cdnjs</strong></Link></h5>
             </div>
             <div className="nav-item">
-              <h5><Link to="/#">Fonts from <strong>Google</strong></Link></h5>
+              <h5><Link to="/font">Fonts from <strong>Google</strong></Link></h5>
             </div>
             <div className="nav-item">
               <h5><Link to="/#">Icons from <strong>IonIcons</strong></Link></h5>

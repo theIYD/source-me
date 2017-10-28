@@ -133,19 +133,17 @@ body {
   position: relative;
   display: block;
   top: 2em;
-}
-
-.cdn {
-  text-align: center;
-
+  hr {
+    width: 25%;
+    border: 1px solid hsl(0,0%,88%);
+    margin: 0.5em auto 0 auto;
+  }
   .dropdown {
     margin-top: 1em;
   }
-  .about-cdn {
-    margin: 2em 0;
-    color: #494C4E;
-  }
-
+}
+.cdn {
+  text-align: center;
   .color-cdn-link {
     border-radius: 5px;
     text-align: center;
@@ -158,9 +156,13 @@ body {
       padding: 0.25em;
     }
   }
-  hr {
-    width: 25%;
-    border: 1px solid hsl(0,0%,88%);
-    margin: 0.5em auto 0 auto;
+}
+.about-library {
+  margin: 2em 0;
+  color: #494C4E;
+  a{
+    text-decoration: underline inherit;
+    color: inherit;
   }
 }
+
