@@ -39,6 +39,23 @@ body {
     background-color: #7986CB;
     border-radius: 10px;
   }
+
+  .about-navigate {
+    padding: 2em 0;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    border-top: 1px solid hsl(0,0%,88%);
+
+    p {
+      font-size: 13px;
+      margin-top: 10px;
+    }
+    a{
+      text-decoration: none;
+      color: #757575;
+    }
+  }
 }
 
 .nav-category {
@@ -108,5 +125,42 @@ body {
         font-size: 17px;
         font-weight: 400;
     }
+  }
+}
+
+.wrapper {
+  padding: 2em 3em 1em 3em;
+  position: relative;
+  display: block;
+  top: 2em;
+}
+
+.cdn {
+  text-align: center;
+
+  .dropdown {
+    margin-top: 1em;
+  }
+  .about-cdn {
+    margin: 2em 0;
+    color: #494C4E;
+  }
+
+  .color-cdn-link {
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+    .cdn-link {
+      margin-top: 2em;
+      color: #494C4E;
+      text-align: center;
+      font-weight: 700;
+      padding: 0.25em;
+    }
+  }
+  hr {
+    width: 25%;
+    border: 1px solid hsl(0,0%,88%);
+    margin: 0.5em auto 0 auto;
   }
 }

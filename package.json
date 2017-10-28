@@ -35,6 +35,7 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "axios": "^0.17.0",
     "node-sass": "^4.5.3",
     "react-router-dom": "^4.2.2",
     "sass-loader": "^6.0.6",

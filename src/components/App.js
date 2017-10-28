@@ -1,15 +1,14 @@
 import '../assets/css/App.scss';
 import React, { Component } from 'react';
 
-import Page1 from './Page1';
-import Page2 from './Page2';
+import CDN from './sub-components/CDN';
 import About from './About';
 
 import {
   BrowserRouter as Router,
   Route,
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
 
 const routes = [
   {
@@ -18,8 +17,13 @@ const routes = [
     main: () => <About />
   },
   {
-    path: '/page1',
-    main: () => <Page1 />
+    path: '/colors',
+    exact: true,
+    main: () => <Page2 />
+  },
+  {
+    path: '/cdn',
+    main: () => <CDN url='https://api.cdnjs.com/libraries' />
   },
   {
     path: '/page2',
@@ -39,13 +43,13 @@ class App extends React.Component {
               <h3>Tools &amp; Utilities</h3>
             </div>
             <div className="nav-item">
-              <h5><Link to="/">Material Colors from <strong>Google</strong></Link></h5>
+              <h5><Link to="/#">Material Colors from <strong>Google</strong></Link></h5>
             </div>
             <div className="nav-item">
-              <h5><Link to="/page1">Content Delivery Networks Library from <strong>cdnjs</strong></Link></h5>
+              <h5><Link to="/cdn">Content Delivery Networks Library from <strong>cdnjs</strong></Link></h5>
             </div>
             <div className="nav-item">
-              <h5><Link to="/page2">Fonts from <strong>Google</strong></Link></h5>
+              <h5><Link to="/#">Fonts from <strong>Google</strong></Link></h5>
             </div>
             <div className="nav-item">
               <h5><Link to="/#">Icons from <strong>IonIcons</strong></Link></h5>
@@ -92,6 +96,10 @@ class App extends React.Component {
             <div className="nav-item">
               <h5><Link to="/#">Lists</Link></h5>
             </div>
+            <footer className="about-navigate">
+              <h6><Link to="/">About</Link></h6>
+              <Link to="/#"><p>Developed with &#128156; by <strong>Idrees</strong></p></Link>
+            </footer>
           </nav>
 
           <div className="content container">
