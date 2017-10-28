@@ -160,6 +160,7 @@ body {
 .about-library {
   margin: 2em 0;
   color: #494C4E;
+  text-align: center;
   a{
     text-decoration: underline inherit;
     color: inherit;
@@ -187,5 +188,23 @@ body {
     margin-right: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+  } 
 }
+
+.wrap-icons {
+  margin: 0 0 0 2em;
+  max-height: 450px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    background-color: hsl(0,0%,96%);
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color: #494C4E;
+    border-radius: 10px;
+  }
+  .icons {
+    margin-right: 1em;
+  }
 }

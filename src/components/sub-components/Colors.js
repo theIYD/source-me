@@ -32,7 +32,7 @@ class Colors extends React.Component {
                 <section className='wrapper' style={{textAlign: 'center'}}>
                     <h2 style={{textAlign: 'center'}}>Google Material Colors</h2>
                     <hr />
-                    <p className="about-library"></p>
+                    <p className="about-library">The Material Colors by Google are one of the finest palettes available on the web. These are vibrant, attractive and soft making the design excellent !</p>
                     <select className='dropdown' onChange={this.handleChangeOption}>
                         {Object.keys(this.state.data).map((color, index) => {
                             return <option key={index} id={color}>{color}</option>

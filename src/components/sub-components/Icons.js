@@ -25,10 +25,10 @@ class Icons extends React.Component {
                 <section className='wrapper'>
                     <h2 style={{textAlign: 'center'}}>Material Design Icons</h2>
                     <hr />
-                    <p className="about-library">The Google Fonts Library is an interactive directory of free hosted application programming interfaces for web fonts. There are over 800 font families available through the main website. All the files are accessible through <a href='https://github.com/google/fonts'>Github's</a> repository</p>
+                    <p className="about-library">The Material Design Icons by Google are simple, modern, friendly, and sometimes quirky. Each icon is created using our design guidelines to depict in simple and minimal forms the universal concepts used commonly throughout a UI.</p>
 
                     <div className="wrap-icons">
-                        {Object.values(this.state.data).map((icon, index) => <i id={icon.label} key={index} className='material-icons'>{icon.class}</i>)}
+                        {Object.values(this.state.data).map((icon, index) => <i id={icon.label} key={index} className='material-icons icons'>{icon.class}</i>)}
                     </div>
                 </section>
             </div>
