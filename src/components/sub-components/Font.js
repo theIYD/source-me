@@ -5,7 +5,8 @@ class Font extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [],
+            name: ''
         };
         this.handleChangeOption = this.handleChangeOption.bind(this);
     }

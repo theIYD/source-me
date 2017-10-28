@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 
 import CDN from './sub-components/CDN';
 import Font from './sub-components/Font';
+import Colors from './sub-components/Colors';
+import Icons from './sub-components/Icons';
 import About from './About';
 
 import {
@@ -27,10 +29,15 @@ const routes = [
     main: () => <CDN url='https://api.cdnjs.com/libraries' />
   },
   {
-    path: '/page2',
-    main: () => <Page2 />
+    path: '/icons',
+    main: () => <Icons url='https://api.myjson.com/bins/fzihv' />
+  },
+  {
+    path: '/colors',
+    main: () => <Colors url='https://gist.githubusercontent.com/amitzur/6ef49f01a662bae992a4/raw/93d6836dcaadb997314944edc3f6a09a11ebecb7/colors.json' />
   }
 ];
+
 
 class App extends React.Component {
 
@@ -44,7 +51,7 @@ class App extends React.Component {
               <h3>Tools &amp; Utilities</h3>
             </div>
             <div className="nav-item">
-              <h5><Link to="/##">Material Colors from <strong>Google</strong></Link></h5>
+              <h5><Link to="/colors">Material Colors from <strong>Google</strong></Link></h5>
             </div>
             <div className="nav-item">
               <h5><Link to="/cdn">Content Delivery Networks Library from <strong>cdnjs</strong></Link></h5>
@@ -53,7 +60,7 @@ class App extends React.Component {
               <h5><Link to="/font">Fonts from <strong>Google</strong></Link></h5>
             </div>
             <div className="nav-item">
-              <h5><Link to="/#">Icons from <strong>IonIcons</strong></Link></h5>
+              <h5><Link to="/icons">Icons from <strong>Google</strong></Link></h5>
             </div>
             <div className="nav-item">
               <h5><Link to="/#">Epsum Generator from <strong>bacon ipsum</strong></Link></h5>
