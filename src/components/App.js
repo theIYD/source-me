@@ -1,5 +1,6 @@
 import '../assets/css/App.scss';
 import React, { Component } from 'react';
+import Modal from 'react-modal';
 
 import CDN from './sub-components/CDN';
 import Font from './sub-components/Font';
@@ -14,11 +15,6 @@ import {
 } from 'react-router-dom';
 
 const routes = [
-  {
-    path: '/',
-    exact: true,
-    main: () => <About />
-  },
   {
     path: '/font',
     exact: true,
@@ -40,6 +36,24 @@ const routes = [
 
 
 class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      isActive: false
+    }
+    this.toggleModal = this.toggleModal.bind(this);
+  }
+
+  componentWillMount() {
+    Modal.setAppElement('body');
+  }
+
+  toggleModal() {
+    this.setState({
+      isActive: !this.state.isActive
+    });
+  }
 
   render() {
     return (
@@ -105,7 +119,17 @@ class App extends React.Component {
               <h5><Link to="/#">Lists</Link></h5>
             </div>
             <footer className="about-navigate">
-              <h6><Link to="/">About</Link></h6>
+              <h6><a><button style={{
+                backgroundColor: 'transparent',
+                backgroundRepeat: 'no-repeat',
+                border: 'none',
+                cursor: 'pointer',
+                overflow: 'hidden',
+                outline: 'none'
+              }} onClick={this.toggleModal}>About</button></a></h6>
+              <Modal isOpen={this.state.isActive}>
+                <About toggle={this.toggleModal} />
+              </Modal>
               <Link to="/#"><p>Developed with &#128156; by <strong>Idrees</strong></p></Link>
             </footer>
           </nav>
