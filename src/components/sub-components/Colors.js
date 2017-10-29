@@ -42,7 +42,7 @@ class Colors extends React.Component {
                     <div className='wrap-colors'>
                         {Object.values(this.state.colors).map((shade, index) => {
                             return ([
-                                <div data-tip data-for={shade} className='color-div' style={{backgroundColor: `${shade}`}} key={index} id={shade}></div>,
+                                <div data-tip data-for={shade} className='color-div' style={{backgroundColor: `${shade}`}} key={shade} id={shade}></div>,
                                 <ReactTooltip key={index} id={shade} type="dark" effect="solid" place="top">
                                     <span>{shade}</span>
                                 </ReactTooltip>

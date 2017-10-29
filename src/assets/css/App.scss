@@ -1,14 +1,16 @@
+@import 'variables';
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Titillium Web', sans-serif
+  font-family: $font-stack-primary;
 }
 
 html {
   height: 100%;
   overflow: hidden;
-  background: #ffffff;
+  background: $white;
 }
 
 body {
@@ -24,19 +26,19 @@ body {
 .navbar {
   width: 340px;
   flex: 3;
-  background: hsl(0,0%,96%);
+  background: $grey-dark-accent-color;
   padding: 1em 0 2.5em 0;
-  border-right: 2px solid hsl(0,0%,88%); 
+  border-right: 2px solid $grey-light-accent-color; 
   max-height: 800px;
   overflow-x: hidden;
   overflow-y: auto;
 
   &::-webkit-scrollbar {
     width: 6px;
-    background-color: hsl(0,0%,96%);
+    background-color: $grey-dark-accent-color;
   }
   &::-webkit-scrollbar-thumb{
-    background-color: #7986CB;
+    background-color: $indigo-300;
     border-radius: 10px;
   }
 
@@ -45,7 +47,7 @@ body {
     text-align: center;
     display: block;
     margin: 0 auto;
-    border-top: 1px solid hsl(0,0%,88%);
+    border-top: 1px solid $grey-light-accent-color;
 
     p {
       font-size: 13px;
@@ -53,7 +55,7 @@ body {
     }
     a{
       text-decoration: none;
-      color: #757575;
+      color: $grey-600;
     }
   }
 }
@@ -85,12 +87,12 @@ body {
     width: 100%;
     line-height: 2;
     text-align: left;
-    color: hsl(0,0%,44%);
+    color: $grey-dark-color;
     font-weight: 500;
 
     &:hover {
-      background: #283593;
-      color: #ffffff;
+      background: $indigo-800;
+      color: $white;
       cursor: pointer;
     }
     
@@ -120,8 +122,8 @@ body {
     margin-top: 20px;
     p {
         line-height: 1.2;
-        color: #494C4E;
-        font-family: 'Roboto', sans-serif;
+        color: $grey-paragraph;
+        font-family: $font-stack-secondary;
         font-size: 17px;
         font-weight: 400;
     }
@@ -135,7 +137,7 @@ body {
   top: 2em;
   hr {
     width: 25%;
-    border: 1px solid hsl(0,0%,88%);
+    border: 1px solid $grey-light-accent-color;
     margin: 0.5em auto 0 auto;
   }
   .dropdown {
@@ -150,7 +152,7 @@ body {
     margin: 0 auto;
     .cdn-link {
       margin-top: 2em;
-      color: #494C4E;
+      color: $grey-paragraph;
       text-align: center;
       font-weight: 700;
       padding: 0.25em;
@@ -159,7 +161,7 @@ body {
 }
 .about-library {
   margin: 2em 0;
-  color: #494C4E;
+  color: $grey-paragraph;
   text-align: center;
   a{
     text-decoration: underline inherit;
@@ -198,10 +200,10 @@ body {
 
   &::-webkit-scrollbar {
     width: 3px;
-    background-color: hsl(0,0%,96%);
+    background-color: $grey-dark-accent-color;
   }
   &::-webkit-scrollbar-thumb{
-    background-color: #494C4E;
+    background-color: $grey-paragraph;
     border-radius: 10px;
   }
   .icons {
