@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ReactTooltip from 'react-tooltip';
 
 class Icons extends React.Component {
     constructor(props) {
@@ -28,7 +29,16 @@ class Icons extends React.Component {
                     <p className="about-library">The Material Design Icons by Google are simple, modern, friendly, and sometimes quirky. Each icon is created using our design guidelines to depict in simple and minimal forms the universal concepts used commonly throughout a UI.</p>
 
                     <div className="wrap-icons">
-                        {Object.values(this.state.data).map((icon, index) => <i id={icon.label} key={index} className='material-icons icons'>{icon.class}</i>)}
+                        {Object.values(this.state.data).map((icon, index) => {
+                            return ([
+                                <i data-tip data-for={icon.class} id={icon.label} key={index} className='material-icons icons'>{icon.class}</i>,
+                                <ReactTooltip id={icon.class} type="dark" effect="solid" place="top">
+                                    <span>
+                                        <code>&lt;i class='material-icons'>{icon.class}&lt;/i></code>
+                                    </span>
+                                </ReactTooltip>
+                            ]);
+                        })}
                     </div>
                 </section>
             </div>

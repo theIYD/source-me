@@ -38,6 +38,7 @@
     "axios": "^0.17.0",
     "node-sass": "^4.5.3",
     "react-router-dom": "^4.2.2",
+    "react-tooltip": "^3.4.0",
     "sass-loader": "^6.0.6",
     "webfontloader": "^1.6.28"
   }
