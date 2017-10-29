@@ -6,6 +6,7 @@ import CDN from './sub-components/CDN';
 import Font from './sub-components/Font';
 import Colors from './sub-components/Colors';
 import Icons from './sub-components/Icons';
+import Epsum from './sub-components/Epsum';
 import About from './About';
 
 import {
@@ -19,6 +20,10 @@ const routes = [
     path: '/font',
     exact: true,
     main: () => <Font url='https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBwIX97bVWr3-6AIUvGkcNnmFgirefZ6Sw' />
+  },
+  {
+    path: '/epsum',
+    main: () => <Epsum url="https://baconipsum.com/api/?type=meat-and-filler" />
   },
   {
     path: '/cdn',
@@ -77,7 +82,7 @@ class App extends React.Component {
               <h5><Link to="/icons">Icons from <strong>Google</strong></Link></h5>
             </div>
             <div className="nav-item">
-              <h5><Link to="/#">Epsum Generator from <strong>bacon ipsum</strong></Link></h5>
+              <h5><Link to="/epsum">Epsum Generator from <strong>bacon ipsum</strong></Link></h5>
             </div>
             <div className="nav-category learning">
               <h3>Learning Library</h3>
