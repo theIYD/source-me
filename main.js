@@ -1,5 +1,7 @@
 'use strict';
 
+const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
+
 // Import parts of electron to use
 const {app, BrowserWindow} = require('electron');
 const path = require('path')
@@ -44,6 +46,9 @@ function createWindow() {
     mainWindow.show();
     // Open the DevTools automatically if developing
     if ( dev ) {
+      installExtension(REACT_DEVELOPER_TOOLS)
+      .then((name) => console.log(`Added Extension:  ${name}`))
+      .catch((err) => console.log('An error occurred: ', err));
       mainWindow.webContents.openDevTools();
     }
   });
@@ -61,6 +66,7 @@ function createWindow() {
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.on('ready', createWindow);
+
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
