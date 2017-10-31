@@ -42,6 +42,12 @@ body {
     border-radius: 10px;
   }
 
+  .m-icon {
+    position: relative;
+    top: 6px;
+    right: 6px;
+  }
+
   .about-navigate {
     padding: 2em 0;
     text-align: center;
@@ -193,7 +199,7 @@ body {
   } 
 }
 
-.wrap-icons, .wrap-ipsum{
+.wrap-icons, .wrap-ipsum {
   margin: 0 0 0 2em;
   max-height: 450px;
   overflow-y: auto;

@@ -2,6 +2,8 @@ import '../assets/css/App.scss';
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 
+const shell = require('electron').shell;
+
 import CDN from './sub-components/CDN';
 import Font from './sub-components/Font';
 import Colors from './sub-components/Colors';
@@ -18,7 +20,6 @@ import {
 const routes = [
   {
     path: '/font',
-    exact: true,
     main: () => <Font url='https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBwIX97bVWr3-6AIUvGkcNnmFgirefZ6Sw' />
   },
   {
@@ -38,7 +39,6 @@ const routes = [
     main: () => <Colors url='https://gist.githubusercontent.com/amitzur/6ef49f01a662bae992a4/raw/93d6836dcaadb997314944edc3f6a09a11ebecb7/colors.json' />
   }
 ];
-
 
 class App extends React.Component {
 
@@ -60,9 +60,15 @@ class App extends React.Component {
     });
   }
 
+  openLink() {
+    shell.openExternal('https://theiyd.github.io/theidrees.me');
+  }
+
   render() {
     return (
       <div id="app">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet" />
         <Router>
         <div style={{display: 'flex'}}>
           <nav className="navbar">
@@ -70,19 +76,19 @@ class App extends React.Component {
               <h3>Tools &amp; Utilities</h3>
             </div>
             <div className="nav-item">
-              <h5><Link to="/colors">Material Colors from <strong>Google</strong></Link></h5>
+              <h5><Link to="/colors"><i className="material-icons md-dark md-36 m-icon">&#xE891;</i>Material Colors from <strong>Google</strong></Link></h5>
             </div>
             <div className="nav-item">
-              <h5><Link to="/cdn">Content Delivery Networks Library from <strong>cdnjs</strong></Link></h5>
+              <h5><Link to="/cdn"><i class="material-icons md-dark md-36 m-icon">&#xE252;</i>Content Delivery Networks Library from <strong>cdnjs</strong></Link></h5>
             </div>
             <div className="nav-item">
-              <h5><Link to="/font">Fonts from <strong>Google</strong></Link></h5>
+              <h5><Link to="/font"><i className="material-icons md-dark md-36 m-icon">&#xE245;</i>Fonts from <strong>Google</strong></Link></h5>
             </div>
             <div className="nav-item">
-              <h5><Link to="/icons">Icons from <strong>Google</strong></Link></h5>
+              <h5><Link to="/icons"><i className="material-icons md-dark md-36 m-icon">&#xE1BD;</i>Material icons from <strong>Google</strong></Link></h5>
             </div>
             <div className="nav-item">
-              <h5><Link to="/epsum">Epsum Generator from <strong>bacon ipsum</strong></Link></h5>
+              <h5><Link to="/epsum"><i className="material-icons md-dark md-36 m-icon">&#xE234;</i>Epsum Generator from <strong>bacon ipsum</strong></Link></h5>
             </div>
             <div className="nav-category learning">
               <h3>Learning Library</h3>
@@ -135,7 +141,7 @@ class App extends React.Component {
               <Modal isOpen={this.state.isActive}>
                 <About toggle={this.toggleModal} />
               </Modal>
-              <Link to="/#"><p>Developed with &#128156; by <strong>Idrees</strong></p></Link>
+              <Link onClick={this.openLink.bind(this)} to="/#"><p>Developed with &#128156; by <strong>Idrees</strong></p></Link>
             </footer>
           </nav>
 
