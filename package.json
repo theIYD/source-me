@@ -1,12 +1,11 @@
 {
-  "name": "basic-electron-react-boilerplate",
-  "version": "0.7.0",
-  "description": "Minimal and modern react+electron+webpack boilerplate",
-  "author": "Phillip Barbiero",
-  "homepage": "https://github.com/pbarbiero/basic-electron-react-boilerplate",
+  "name": "source-me",
+  "version": "0.0.6",
+  "description": "A tool which provides necessary tools needed for web development",
+  "author": "Idrees Dargahwala",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pbarbiero/basic-electron-react-boilerplate.git"
+    "url": "https://github.com/theIYD/source-me"
   },
   "license": "MIT",
   "main": "main.js",
