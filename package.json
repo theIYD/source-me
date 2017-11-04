@@ -36,6 +36,8 @@
   },
   "dependencies": {
     "axios": "^0.17.0",
+    "dotenv": "^4.0.0",
+    "googleapis": "^22.2.0",
     "node-sass": "^4.5.3",
     "react-modal": "^3.1.0",
     "react-router-dom": "^4.2.2",

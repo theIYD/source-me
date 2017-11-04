@@ -9,6 +9,7 @@ import Font from './sub-components/Font';
 import Colors from './sub-components/Colors';
 import Icons from './sub-components/Icons';
 import Epsum from './sub-components/Epsum';
+import URLShortener from './sub-components/URLShortener';
 import About from './About';
 
 import {
@@ -37,6 +38,10 @@ const routes = [
   {
     path: '/colors',
     main: () => <Colors url='https://gist.githubusercontent.com/amitzur/6ef49f01a662bae992a4/raw/93d6836dcaadb997314944edc3f6a09a11ebecb7/colors.json' />
+  },
+  {
+    path: '/urlshortner',
+    main: () => <URLShortener />
   }
 ];
 
@@ -70,7 +75,7 @@ class App extends React.Component {
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet" />
         <Router>
-        <div style={{display: 'flex'}}>
+        <div style={{display: 'flex', height: '100%'}}>
           <nav className="navbar">
             <div className="nav-category">
               <h3>Tools &amp; Utilities</h3>
@@ -90,45 +95,9 @@ class App extends React.Component {
             <div className="nav-item">
               <h5><Link to="/epsum"><i className="material-icons md-dark md-36 m-icon">&#xE234;</i>Epsum Generator from <strong>bacon ipsum</strong></Link></h5>
             </div>
-            <div className="nav-category learning">
-              <h3>Learning Library</h3>
-            </div>
-            <div className="nav-sub-category">
-              <h4>HyperText Markup Language</h4>
-            </div>
             <div className="nav-item">
-              <h5><Link to="/#">Basics</Link></h5>
-            </div>
-            <div className="nav-item">
-              <h5><Link to="/#">Tables</Link></h5>
-            </div>
-            <div className="nav-item">
-              <h5><Link to="/#">Lists</Link></h5>
-            </div>
-            <div className="nav-sub-category">
-              <h4>Cascading Style Sheet</h4>
-            </div>
-            <div className="nav-item">
-              <h5><Link to="/#">Basics</Link></h5>
-            </div>
-            <div className="nav-item">
-              <h5><Link to="/#">Tables</Link></h5>
-            </div>
-            <div className="nav-item">
-              <h5><Link to="/#">Lists</Link></h5>
-            </div>
-            <div className="nav-sub-category">
-              <h4>Javascript</h4>
-            </div>
-            <div className="nav-item">
-              <h5><Link to="/#">Basics</Link></h5>
-            </div>
-            <div className="nav-item">
-              <h5><Link to="/#">Tables</Link></h5>
-            </div>
-            <div className="nav-item">
-              <h5><Link to="/#">Lists</Link></h5>
-            </div>
+              <h5><Link to="/urlshortner"><i className="material-icons md-dark md-36 m-icon">&#xE234;</i>URL Shortner</Link></h5>
+          </div>
             <footer className="about-navigate">
               <h6><a><button style={{
                 backgroundColor: 'transparent',
