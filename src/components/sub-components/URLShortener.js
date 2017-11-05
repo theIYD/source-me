@@ -36,6 +36,19 @@ class URLShortener extends Component {
 
     getShortURL(e) {
         e.preventDefault();
+        const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name and extension
+        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+        '(\\:\\d+)?'+ // port
+        '(\\/[-a-z\\d%@_.~+&:]*)*'+ // path
+        '(\\?[;&a-z\\d%@_.,~+&:=-]*)?'+ // query string
+        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+        
+      if(!pattern.test(this.state.longUrl)) {
+        alert("Please enter a valid URL.");
+        document.querySelector('#url-form').reset();
+
+      } else {
         gapi.client.urlshortener.url.insert({
             "resource": {
               "longUrl": this.state.longUrl
@@ -46,9 +59,11 @@ class URLShortener extends Component {
             this.setState({
                 shortURL: response.result.id
             });
-          }, function(error) {
-            console.error("Execute error", error);
+          }, (error) => {
+                alert('Invalid url !');
+                document.querySelector('#url-form').reset();
           });
+      }
     }
 
     getInput(event) {
@@ -63,10 +78,38 @@ class URLShortener extends Component {
                 <section className='wrapper'>
                     <h2 style={{textAlign: 'center'}}>URL Shortener</h2>
                     <hr />
-                    <div className="wrap=input">
-                        <input onChange={event => this.getInput(event)} type="text" placeholder="Place your url" />
-                        <input type="submit" onClick={this.getShortURL} />
-                        <p>{this.state.shortURL}</p>
+                    <div className="wrap-input" style={{textAlign: 'center'}}>
+                        <form id="url-form" onSubmit={this.getShortURL}>
+                            <input style={{
+                                width: '360px',
+                                background: '#fff',
+                                color: '#a3a3a3',
+                                font: 'inherit',
+                                boxShadow: '6px 6px 10px 1px rgba(0, 0, 0, 0.1)',
+                                border: '0',
+                                outline: '0',
+                                padding: '22px 18px',
+                                margin: '50px auto 0 auto',
+                                display: 'block',
+                                textAlign: 'center'
+                            }} onChange={event => this.getInput(event)} type="text" placeholder="Place your url" required />
+                            <input style={{
+                                background: '#7f8ff4',
+                                color: '#fff',
+                                boxShadow: '0 0 10px 2px rgba(0, 0, 0, 0.1)',
+                                borderRadius: '2px',
+                                padding: '12px 36px',
+                                marginTop: '20px',
+                                outline: 'none',
+                                border: '0',
+                                cursor: 'pointer'
+                            }} type="submit" />
+                        </form>
+                        <p style={{
+                            fontWeight: 'bold',
+                            marginTop: '20px',
+                            padding: '12px 36px'
+                        }}>{this.state.shortURL}</p>
                     </div>
                 </section>
                 
