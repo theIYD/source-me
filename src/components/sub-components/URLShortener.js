@@ -60,18 +60,16 @@ class URLShortener extends Component {
                 shortURL: response.result.id
             });
           }, (error) => {
-                alert('Invalid url !');
+                alert('Something went wrong. ${error}');
                 document.querySelector('#url-form').reset();
           });
       }
     }
-
     getInput(event) {
         this.setState({
             longUrl: event.target.value
         });
     }
-
     render() {
         return (
             <div>

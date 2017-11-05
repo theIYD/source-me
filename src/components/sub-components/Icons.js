@@ -13,12 +13,14 @@ class Icons extends React.Component {
         axios.get(`${this.props.url}`)
         .then(res => {
           this.setState({ 
-              data: res.data,
+              data: res.data
             });
+        })
+        .catch((error) => {
+            alert('Something went wrong !', error);
         });
     }
     render() {
-        console.log(this.state.data)
         return (
             <div>
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
