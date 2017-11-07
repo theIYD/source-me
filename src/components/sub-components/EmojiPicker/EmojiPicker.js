@@ -9,7 +9,8 @@ class EmojiPicker extends Component {
         this.state = {
             data: [],
             isActive: false,
-            currentEmojiCode: ''
+            currentEmojiCode: '',
+            currentEmoji: ''
         }
         this.toggleModal = this.toggleModal.bind(this);
     }
@@ -26,7 +27,8 @@ class EmojiPicker extends Component {
     toggleModal(e) {
         this.setState({
             isActive: !this.state.isActive,
-            currentEmojiCode: e.target.getAttribute('data-emoji')
+            currentEmojiCode: e.target.getAttribute('data-emoji-code'),
+            currentEmoji: e.target.getAttribute('data-emoji')
         });
     }
     
@@ -38,20 +40,9 @@ class EmojiPicker extends Component {
                 <h2 style={{textAlign: 'center'}}>Emoji Picker</h2>
                 <hr />
                 <div className="wrap-emojis" style={{textAlign: 'center'}}>
-                
-                </div>
-            </section>
-        </div>
-        );
-    }
-}
-
-export default EmojiPicker;
-
-/*
-{this.state.data.map((emoji, index) => {
+                {this.state.data.map((emoji, index) => {
                     return (
-                        <div onClick={this.toggleModal} key={emoji.name} data-emoji={emoji.code} style={{
+                        <div onClick={this.toggleModal} key={emoji.name} data-emoji={emoji.char} data-emoji-code={emoji.code} style={{
                             display: 'inline-flex',
                             width: '20px',
                             height: '20px',
@@ -67,7 +58,14 @@ export default EmojiPicker;
                         );
                     })}
                     {this.state.isActive ? 
-                        <EmojiModal emoji={this.state.currentEmojiCode} toggle={this.toggleModal} />
+                        <EmojiModal emoji={this.state.currentEmoji} emojiCode={this.state.currentEmojiCode} toggle={this.toggleModal} />
                         : null
                       }
- */
+                </div>
+            </section>
+        </div>
+        );
+    }
+}
+
+export default EmojiPicker;
