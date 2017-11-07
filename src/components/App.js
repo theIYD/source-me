@@ -10,6 +10,7 @@ import Colors from './sub-components/Colors';
 import Icons from './sub-components/Icons';
 import Epsum from './sub-components/Epsum';
 import URLShortener from './sub-components/URLShortener';
+import EmojiPicker from './sub-components/EmojiPicker/EmojiPicker';
 import About from './About';
 
 import {
@@ -42,6 +43,10 @@ const routes = [
   {
     path: '/urlshortner',
     main: () => <URLShortener />
+  },
+  {
+    path: '/emojis',
+    main: () => <EmojiPicker url='' />
   }
 ];
 
@@ -96,8 +101,11 @@ class App extends React.Component {
               <h5><Link to="/epsum"><i className="material-icons md-dark md-36 m-icon">&#xE234;</i>Epsum Generator from <strong>bacon ipsum</strong></Link></h5>
             </div>
             <div className="nav-item">
-              <h5><Link to="/urlshortner"><i className="material-icons md-dark md-36 m-icon">&#xE234;</i>URL Shortner</Link></h5>
-          </div>
+              <h5><Link to="/urlshortner"><i className="material-icons md-dark md-36 m-icon">&#xE250;</i>URL Shortner</Link></h5>
+            </div>
+            <div className="nav-item">
+              <h5><Link to="/emojis"><i className="material-icons md-dark md-36 m-icon">&#xE24E;</i>Emoji Picker</Link></h5>
+            </div>
             <footer className="about-navigate">
               <h6><a><button style={{
                 backgroundColor: 'transparent',

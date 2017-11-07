@@ -1,0 +1,182 @@
+[
+    {
+        "no": 1,
+        "code": "1F600",
+        "char": "😀",
+        "name": "grinning face"
+      },
+      {
+        "no": 2,
+        "code": "1F601",
+        "char": "😁",
+        "name": "beaming face with smiling eyes"
+      },
+      {
+        "no": 3,
+        "code": "1F602",
+        "char": "😂",
+        "name": "face with tears of joy"
+      },
+      {
+        "no": 4,
+        "code": "1F923",
+        "char": "🤣",
+        "name": "rolling on the floor laughing"
+      },
+      {
+        "no": 5,
+        "code": "1F603",
+        "char": "😃",
+        "name": "grinning face with big eyes"
+      },
+      {
+        "no": 6,
+        "code": "1F604",
+        "char": "😄",
+        "name": "grinning face with smiling eyes"
+      },
+      {
+        "no": 7,
+        "code": "1F605",
+        "char": "😅",
+        "name": "grinning face with sweat"
+      },
+      {
+        "no": 8,
+        "code": "1F606",
+        "char": "😆",
+        "name": "grinning squinting face"
+      },
+      {
+        "no": 9,
+        "code": "1F609",
+        "char": "😉",
+        "name": "winking face"
+      },
+      {
+        "no": 10,
+        "code": "1F60A",
+        "char": "😊",
+        "name": "smiling face with smiling eyes"
+      },
+      {
+        "no": 11,
+        "code": "1F60B",
+        "char": "😋",
+        "name": "face savoring food"
+      },
+      {
+        "no": 12,
+        "code": "1F60E",
+        "char": "😎",
+        "name": "smiling face with sunglasses"
+      },
+      {
+        "no": 13,
+        "code": "1F60D",
+        "char": "😍",
+        "name": "smiling face with heart-eyes"
+      },
+      {
+        "no": 14,
+        "code": "1F618",
+        "char": "😘",
+        "name": "face blowing a kiss"
+      },
+      {
+        "no": 15,
+        "code": "1F617",
+        "char": "😗",
+        "name": "kissing face"
+      },
+      {
+        "no": 16,
+        "code": "1F619",
+        "char": "😙",
+        "name": "kissing face with smiling eyes"
+      },
+      {
+        "no": 17,
+        "code": "1F61A",
+        "char": "😚",
+        "name": "kissing face with closed eyes"
+      },
+      {
+        "no": 18,
+        "code": "263A",
+        "char": "☺",
+        "name": "smiling face"
+      },
+      {
+        "no": 19,
+        "code": "1F642",
+        "char": "🙂",
+        "name": "slightly smiling face"
+      },
+      {
+        "no": 20,
+        "code": "1F917",
+        "char": "🤗",
+        "name": "hugging face"
+      },
+      {
+        "no": 21,
+        "code": "1F929",
+        "char": "🤩",
+        "name": "⊛ star-struck"
+      },
+      {
+        "no": 22,
+        "code": "1F914",
+        "char": "🤔",
+        "name": "thinking face"
+      },
+      {
+        "no": 23,
+        "code": "1F928",
+        "char": "🤨",
+        "name": "⊛ face with raised eyebrow"
+      },
+      {
+        "no": 24,
+        "code": "1F610",
+        "char": "😐",
+        "name": "neutral face"
+      },
+      {
+        "no": 25,
+        "code": "1F611",
+        "char": "😑",
+        "name": "expressionless face"
+      },
+      {
+        "no": 26,
+        "code": "1F636",
+        "char": "😶",
+        "name": "face without mouth"
+      },
+      {
+        "no": 27,
+        "code": "1F644",
+        "char": "🙄",
+        "name": "face with rolling eyes"
+      },
+      {
+        "no": 28,
+        "code": "1F60F",
+        "char": "😏",
+        "name": "smirking face"
+      },
+      {
+        "no": 29,
+        "code": "1F623",
+        "char": "😣",
+        "name": "persevering face"
+      },
+      {
+        "no": 30,
+        "code": "1F625",
+        "char": "😥",
+        "name": "sad but relieved face"
+      }
+]
