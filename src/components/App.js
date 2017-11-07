@@ -46,7 +46,7 @@ const routes = [
   },
   {
     path: '/emojis',
-    main: () => <EmojiPicker url='' />
+    main: () => <EmojiPicker url='https://raw.githubusercontent.com/theIYD/source-me/development/src/components/sub-components/EmojiPicker/emojis.json' />
   }
 ];
 

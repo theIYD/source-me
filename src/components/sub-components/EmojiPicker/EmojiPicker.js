@@ -31,7 +31,6 @@ class EmojiPicker extends Component {
     }
     
     render() {
-        console.log(this.state.data)
         return (
             <div>
             <section className="wrapper">
@@ -40,7 +39,7 @@ class EmojiPicker extends Component {
                 <div className="wrap-emojis" style={{textAlign: 'center'}}>
                 {this.state.data.map((emoji, index) => {
                     return (
-                        <div onClick={this.toggleModal} id={emoji.code} style={{
+                        <div onClick={this.toggleModal} key={emoji.name} data-emoji={emoji.code} style={{
                             display: 'inline-flex',
                             width: '20px',
                             height: '20px',
