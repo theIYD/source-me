@@ -1,12 +1,3 @@
-/* 
-  Credits: 
-
-  Name: – Amio –
-  File: https://github.com/amio/emoji.json/blob/master/emoji.json
-  Version: 5.0
-  
-*/
-
 [
     {
         "no": 1,
@@ -187,5 +178,473 @@
         "code": "1F625",
         "char": "😥",
         "name": "sad but relieved face"
+      },
+      {
+        "no": 31,
+        "code": "1F62E",
+        "char": "😮",
+        "name": "face with open mouth"
+      },
+      {
+        "no": 32,
+        "code": "1F910",
+        "char": "🤐",
+        "name": "zipper-mouth face"
+      },
+      {
+        "no": 33,
+        "code": "1F62F",
+        "char": "😯",
+        "name": "hushed face"
+      },
+      {
+        "no": 34,
+        "code": "1F62A",
+        "char": "😪",
+        "name": "sleepy face"
+      },
+      {
+        "no": 35,
+        "code": "1F62B",
+        "char": "😫",
+        "name": "tired face"
+      },
+      {
+        "no": 36,
+        "code": "1F634",
+        "char": "😴",
+        "name": "sleeping face"
+      },
+      {
+        "no": 37,
+        "code": "1F60C",
+        "char": "😌",
+        "name": "relieved face"
+      },
+      {
+        "no": 38,
+        "code": "1F61B",
+        "char": "😛",
+        "name": "face with tongue"
+      },
+      {
+        "no": 39,
+        "code": "1F61C",
+        "char": "😜",
+        "name": "winking face with tongue"
+      },
+      {
+        "no": 40,
+        "code": "1F61D",
+        "char": "😝",
+        "name": "squinting face with tongue"
+      },
+      {
+        "no": 41,
+        "code": "1F924",
+        "char": "🤤",
+        "name": "drooling face"
+      },
+      {
+        "no": 42,
+        "code": "1F612",
+        "char": "😒",
+        "name": "unamused face"
+      },
+      {
+        "no": 43,
+        "code": "1F613",
+        "char": "😓",
+        "name": "downcast face with sweat"
+      },
+      {
+        "no": 44,
+        "code": "1F614",
+        "char": "😔",
+        "name": "pensive face"
+      },
+      {
+        "no": 45,
+        "code": "1F615",
+        "char": "😕",
+        "name": "confused face"
+      },
+      {
+        "no": 46,
+        "code": "1F643",
+        "char": "🙃",
+        "name": "upside-down face"
+      },
+      {
+        "no": 47,
+        "code": "1F911",
+        "char": "🤑",
+        "name": "money-mouth face"
+      },
+      {
+        "no": 48,
+        "code": "1F632",
+        "char": "😲",
+        "name": "astonished face"
+      },
+      {
+        "no": 49,
+        "code": "2639",
+        "char": "☹",
+        "name": "frowning face"
+      },
+      {
+        "no": 50,
+        "code": "1F641",
+        "char": "🙁",
+        "name": "slightly frowning face"
+      },
+      {
+        "no": 51,
+        "code": "1F616",
+        "char": "😖",
+        "name": "confounded face"
+      },
+      {
+        "no": 52,
+        "code": "1F61E",
+        "char": "😞",
+        "name": "disappointed face"
+      },
+      {
+        "no": 53,
+        "code": "1F61F",
+        "char": "😟",
+        "name": "worried face"
+      },
+      {
+        "no": 54,
+        "code": "1F624",
+        "char": "😤",
+        "name": "face with steam from nose"
+      },
+      {
+        "no": 55,
+        "code": "1F622",
+        "char": "😢",
+        "name": "crying face"
+      },
+      {
+        "no": 56,
+        "code": "1F62D",
+        "char": "😭",
+        "name": "loudly crying face"
+      },
+      {
+        "no": 57,
+        "code": "1F626",
+        "char": "😦",
+        "name": "frowning face with open mouth"
+      },
+      {
+        "no": 58,
+        "code": "1F627",
+        "char": "😧",
+        "name": "anguished face"
+      },
+      {
+        "no": 59,
+        "code": "1F628",
+        "char": "😨",
+        "name": "fearful face"
+      },
+      {
+        "no": 60,
+        "code": "1F629",
+        "char": "😩",
+        "name": "weary face"
+      },
+      {
+        "no": 61,
+        "code": "1F92F",
+        "char": "🤯",
+        "name": "⊛ exploding head"
+      },
+      {
+        "no": 62,
+        "code": "1F62C",
+        "char": "😬",
+        "name": "grimacing face"
+      },
+      {
+        "no": 63,
+        "code": "1F630",
+        "char": "😰",
+        "name": "anxious face with sweat"
+      },
+      {
+        "no": 64,
+        "code": "1F631",
+        "char": "😱",
+        "name": "face screaming in fear"
+      },
+      {
+        "no": 65,
+        "code": "1F633",
+        "char": "😳",
+        "name": "flushed face"
+      },
+      {
+        "no": 66,
+        "code": "1F92A",
+        "char": "🤪",
+        "name": "⊛ crazy face"
+      },
+      {
+        "no": 67,
+        "code": "1F635",
+        "char": "😵",
+        "name": "dizzy face"
+      },
+      {
+        "no": 68,
+        "code": "1F621",
+        "char": "😡",
+        "name": "pouting face"
+      },
+      {
+        "no": 69,
+        "code": "1F620",
+        "char": "😠",
+        "name": "angry face"
+      },
+      {
+        "no": 70,
+        "code": "1F92C",
+        "char": "🤬",
+        "name": "⊛ face with symbols on mouth"
+      },
+      {
+        "no": 71,
+        "code": "1F637",
+        "char": "😷",
+        "name": "face with medical mask"
+      },
+      {
+        "no": 72,
+        "code": "1F912",
+        "char": "🤒",
+        "name": "face with thermometer"
+      },
+      {
+        "no": 73,
+        "code": "1F915",
+        "char": "🤕",
+        "name": "face with head-bandage"
+      },
+      {
+        "no": 74,
+        "code": "1F922",
+        "char": "🤢",
+        "name": "nauseated face"
+      },
+      {
+        "no": 75,
+        "code": "1F92E",
+        "char": "🤮",
+        "name": "⊛ face vomiting"
+      },
+      {
+        "no": 76,
+        "code": "1F927",
+        "char": "🤧",
+        "name": "sneezing face"
+      },
+      {
+        "no": 77,
+        "code": "1F607",
+        "char": "😇",
+        "name": "smiling face with halo"
+      },
+      {
+        "no": 78,
+        "code": "1F920",
+        "char": "🤠",
+        "name": "cowboy hat face"
+      },
+      {
+        "no": 79,
+        "code": "1F921",
+        "char": "🤡",
+        "name": "clown face"
+      },
+      {
+        "no": 80,
+        "code": "1F925",
+        "char": "🤥",
+        "name": "lying face"
+      },
+      {
+        "no": 81,
+        "code": "1F92B",
+        "char": "🤫",
+        "name": "⊛ shushing face"
+      },
+      {
+        "no": 82,
+        "code": "1F92D",
+        "char": "🤭",
+        "name": "⊛ face with hand over mouth"
+      },
+      {
+        "no": 83,
+        "code": "1F9D0",
+        "char": "🧐",
+        "name": "⊛ face with monocle"
+      },
+      {
+        "no": 84,
+        "code": "1F913",
+        "char": "🤓",
+        "name": "nerd face"
+      },
+      {
+        "no": 85,
+        "code": "1F608",
+        "char": "😈",
+        "name": "smiling face with horns"
+      },
+      {
+        "no": 86,
+        "code": "1F47F",
+        "char": "👿",
+        "name": "angry face with horns"
+      },
+      {
+        "no": 87,
+        "code": "1F479",
+        "char": "👹",
+        "name": "ogre"
+      },
+      {
+        "no": 88,
+        "code": "1F47A",
+        "char": "👺",
+        "name": "goblin"
+      },
+      {
+        "no": 89,
+        "code": "1F480",
+        "char": "💀",
+        "name": "skull"
+      },
+      {
+        "no": 90,
+        "code": "2620",
+        "char": "☠",
+        "name": "skull and crossbones"
+      },
+      {
+        "no": 91,
+        "code": "1F47B",
+        "char": "👻",
+        "name": "ghost"
+      },
+      {
+        "no": 92,
+        "code": "1F47D",
+        "char": "👽",
+        "name": "alien"
+      },
+      {
+        "no": 93,
+        "code": "1F47E",
+        "char": "👾",
+        "name": "alien monster"
+      },
+      {
+        "no": 94,
+        "code": "1F916",
+        "char": "🤖",
+        "name": "robot face"
+      },
+      {
+        "no": 95,
+        "code": "1F4A9",
+        "char": "💩",
+        "name": "pile of poo"
+      },
+      {
+        "no": 96,
+        "code": "1F63A",
+        "char": "😺",
+        "name": "grinning cat face"
+      },
+      {
+        "no": 97,
+        "code": "1F638",
+        "char": "😸",
+        "name": "grinning cat face with smiling eyes"
+      },
+      {
+        "no": 98,
+        "code": "1F639",
+        "char": "😹",
+        "name": "cat face with tears of joy"
+      },
+      {
+        "no": 99,
+        "code": "1F63B",
+        "char": "😻",
+        "name": "smiling cat face with heart-eyes"
+      },
+      {
+        "no": 100,
+        "code": "1F63C",
+        "char": "😼",
+        "name": "cat face with wry smile"
+      },
+      {
+        "no": 101,
+        "code": "1F63D",
+        "char": "😽",
+        "name": "kissing cat face"
+      },
+      {
+        "no": 102,
+        "code": "1F640",
+        "char": "🙀",
+        "name": "weary cat face"
+      },
+      {
+        "no": 103,
+        "code": "1F63F",
+        "char": "😿",
+        "name": "crying cat face"
+      },
+      {
+        "no": 104,
+        "code": "1F63E",
+        "char": "😾",
+        "name": "pouting cat face"
+      },
+      {
+        "no": 105,
+        "code": "1F648",
+        "char": "🙈",
+        "name": "see-no-evil monkey"
+      },
+      {
+        "no": 106,
+        "code": "1F649",
+        "char": "🙉",
+        "name": "hear-no-evil monkey"
+      },
+      {
+        "no": 107,
+        "code": "1F64A",
+        "char": "🙊",
+        "name": "speak-no-evil monkey"
+      },
+      {
+        "no": 108,
+        "code": "1F476",
+        "char": "👶",
+        "name": "baby"
       }
 ]

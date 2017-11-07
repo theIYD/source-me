@@ -31,33 +31,14 @@ class EmojiPicker extends Component {
     }
     
     render() {
+        console.log(this.state.data)
         return (
             <div>
             <section className="wrapper">
                 <h2 style={{textAlign: 'center'}}>Emoji Picker</h2>
                 <hr />
                 <div className="wrap-emojis" style={{textAlign: 'center'}}>
-                {this.state.data.map((emoji, index) => {
-                    return (
-                        <div onClick={this.toggleModal} key={emoji.name} data-emoji={emoji.code} style={{
-                            display: 'inline-flex',
-                            width: '20px',
-                            height: '20px',
-                            padding: '30px',
-                            margin: '10px',
-                            borderRadius: '2px',
-                            boxShadow: '2px 2px 10px 2px rgba(0, 0, 0, 0.1)',
-                            cursor: 'pointer',
-                            alignItems: 'center', 
-                            justifyContent: 'center',
-                            fontSize: '20px'
-                        }}>{emoji.char}</div>
-                        );
-                    })}
-                    {this.state.isActive ? 
-                        <EmojiModal emoji={this.state.currentEmojiCode} toggle={this.toggleModal} />
-                        : null
-                      }
+                
                 </div>
             </section>
         </div>
@@ -70,7 +51,7 @@ export default EmojiPicker;
 /*
 {this.state.data.map((emoji, index) => {
                     return (
-                        <div onClick={this.toggleModal} id={emoji.code} style={{
+                        <div onClick={this.toggleModal} key={emoji.name} data-emoji={emoji.code} style={{
                             display: 'inline-flex',
                             width: '20px',
                             height: '20px',
