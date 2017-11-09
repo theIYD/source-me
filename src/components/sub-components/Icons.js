@@ -6,7 +6,9 @@ class Icons extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [],
+            error: '',
+            isError: false
         }
     }
     componentDidMount() {
@@ -17,7 +19,10 @@ class Icons extends React.Component {
             });
         })
         .catch((error) => {
-            alert('Something went wrong !', error);
+            this.setState({
+                error: error,
+                isError: true
+            });
         });
     }
     render() {
@@ -42,6 +47,23 @@ class Icons extends React.Component {
                             ]);
                         })}
                     </div>
+                    {
+                        ((this.state.isError) 
+                        ? (<div className="wrap-error" style={{
+                            textAlign: 'center',
+                            margin: '20px auto',
+                            backgroundColor: '#EF9A9A',
+                            padding: '12px 20px'
+                            
+                        }}>
+                            <p style={{
+                                color: '#D50000'
+                            }}><strong style={{
+                                color: '#D50000'
+                            }}>Error:</strong> Something did not work. Check your internet connection.</p>
+                            </div>)
+                        : null)
+                    }
                 </section>
             </div>
         );

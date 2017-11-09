@@ -33,7 +33,6 @@ class EmojiPicker extends Component {
     }
     
     render() {
-        console.log(this.state.data)
         return (
             <div>
             <section className="wrapper">
