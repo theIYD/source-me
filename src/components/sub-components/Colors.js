@@ -13,12 +13,16 @@ class Colors extends React.Component {
         this.handleChangeOption = this.handleChangeOption.bind(this);
     }
     componentDidMount() {
+        this._isMounted = true;
         axios.get(`${this.props.url}`)
         .then(res => {
           this.setState({ 
               data: res.data,
             });
         });
+    }
+    componentWillUnmount() {
+        this._isMounted = false;
     }
     handleChangeOption(e) {
         let id = e.target.options[e.target.selectedIndex].id;
@@ -56,8 +60,3 @@ class Colors extends React.Component {
 }
 
 export default Colors;
-
-/*{this.state.colors.map((shade, index) => {
-                            return <div style={{backgroundColor: `${shade}`, 
-                            width: '30px', height: '30px'}} key={index} id={shade}>{shade}</div>
-                        })}*/ 

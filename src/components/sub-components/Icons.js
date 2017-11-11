@@ -12,6 +12,7 @@ class Icons extends React.Component {
         }
     }
     componentDidMount() {
+        this._isMounted = true;
         axios.get(`${this.props.url}`)
         .then(res => {
           this.setState({ 
@@ -25,6 +26,11 @@ class Icons extends React.Component {
             });
         });
     }
+
+    componentWillUnMount() {
+        this._isMounted = false;    
+    }
+
     render() {
         return (
             <div>

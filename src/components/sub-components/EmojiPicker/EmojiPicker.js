@@ -16,12 +16,17 @@ class EmojiPicker extends Component {
     }
     
     componentDidMount() {
+        this._isMounted = true;
         axios.get(`${this.props.url}`)
         .then(res => {
           this.setState({ 
               data: res.data
             });
         });
+    }
+
+    componentWillUnmount() {
+        this._isMounted = false;
     }
 
     toggleModal(e) {
@@ -38,7 +43,7 @@ class EmojiPicker extends Component {
             <section className="wrapper">
                 <h2 style={{textAlign: 'center'}}>Emoji Picker</h2>
                 <hr />
-                <div className="wrap-emojis" style={{textAlign: 'center'}}>
+                <div className="wrap-emojis" style={{textAlign: 'center', position: 'relative', top: '2em'}}>
                 {this.state.data.map((emoji, index) => {
                     return (
                         <div onClick={this.toggleModal} key={emoji.name} data-emoji={emoji.char} data-emoji-code={emoji.code} style={{

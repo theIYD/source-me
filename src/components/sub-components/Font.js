@@ -11,6 +11,7 @@ class Font extends React.Component {
         this.handleChangeOption = this.handleChangeOption.bind(this);
     }
     componentDidMount() {
+        this._isMounted = true;
         axios.get(`${this.props.url}`)
         .then(res => {
           this.setState({ 
@@ -18,6 +19,9 @@ class Font extends React.Component {
               link: ''
             });
         });
+    }
+    componentWillUnmount() {
+        this._isMounted = false;
     }
     handleChangeOption(e) {
         let id = e.target.options[e.target.selectedIndex].id;

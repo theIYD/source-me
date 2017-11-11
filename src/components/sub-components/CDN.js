@@ -10,6 +10,7 @@ class CDN extends React.Component {
         };
     }
     componentDidMount() {
+        this._isMounted = true;
         axios.get(`${this.props.url}`)
         .then(res => {
           this.setState({ 
@@ -18,6 +19,11 @@ class CDN extends React.Component {
             });
         });
     }
+
+    componentWillUnmount() {
+        this._isMounted = false;    
+    }
+
     handleChangeOption(e) {
         let id = e.target.options[e.target.selectedIndex].id;
         let cdn_link = this.state.data[id].latest;

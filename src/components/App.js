@@ -50,6 +50,7 @@ const routes = [
   }
 ];
 
+
 class App extends React.Component {
 
   constructor(props) {
@@ -58,6 +59,14 @@ class App extends React.Component {
       isActive: false
     }
     this.toggleModal = this.toggleModal.bind(this);
+  }
+
+  componentDidMount() {
+    this._isMounted = true;
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;  
   }
 
   componentWillMount() {
@@ -121,8 +130,7 @@ class App extends React.Component {
               <Link onClick={this.openLink.bind(this)} to="/#"><p>Developed with &#128156; by <strong>Idrees</strong></p></Link>
             </footer>
           </nav>
-
-          <div className="content container">
+          <div id="main" className="content container">
             {routes.map((route, index) => (
               <Route
                 key={index}
@@ -132,9 +140,10 @@ class App extends React.Component {
               />
             ))}
           </div>
+          
+          
           </div>
         </Router>
-
       </div>
     );
   }

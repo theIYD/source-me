@@ -31,7 +31,12 @@ class URLShortener extends Component {
     }
 
     componentDidMount() {
+        this._isMounted = true;
         this.loadURLShortenerAPI();
+    }
+
+    componentWillUnMount() {
+        this._isMounted = false;
     }
 
     getShortURL(e) {

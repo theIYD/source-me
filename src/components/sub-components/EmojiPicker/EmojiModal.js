@@ -17,7 +17,7 @@ class EmojiModal extends Component {
                                 fontSize: '4em'
                             }}>{this.props.emoji}</span>
                         </div>
-                        <h2 style={{marginTop: '30px', fontWeight: 'bold'}}>{this.props.emojiCode}</h2>
+                        <h2 style={{marginTop: '30px', fontWeight: 'bold'}}><span>&#x</span>{this.props.emojiCode}<span>;</span></h2>
                         <button style={{background: 'transparent', cursor: 'pointer', outline: 'none', fontWeight: 'bold', border: 'none', position: 'relative', top: '15px'}} onClick={this.props.toggle}><i className="material-icons md-dark md-36">&#xE14C;</i></button>
                     </div>
                 </div>

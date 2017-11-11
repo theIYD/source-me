@@ -10,6 +10,12 @@ class Epsum extends React.Component {
         }
         this.toggleEpsum = this.toggleEpsum.bind(this);
     }
+    componentDidMount() {
+        this._isMounted = true;
+    }
+    componentWillUnmount() {
+        this._isMounted = false;
+    }
     toggleEpsum() {
         axios.get(`${this.props.url}`)
         .then(res => {
