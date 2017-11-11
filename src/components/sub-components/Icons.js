@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import ReactTooltip from 'react-tooltip';
+import { ClipLoader } from 'react-spinners';
 
 class Icons extends React.Component {
     constructor(props) {
@@ -8,7 +9,8 @@ class Icons extends React.Component {
         this.state = {
             data: [],
             error: '',
-            isError: false
+            isError: false,
+            loading: true
         }
     }
     componentDidMount() {
@@ -42,16 +44,31 @@ class Icons extends React.Component {
                     <p className="about-library">The Material Design Icons by Google are simple, modern, friendly, and sometimes quirky. Each icon is created using our design guidelines to depict in simple and minimal forms the universal concepts used commonly throughout a UI.</p>
 
                     <div className="wrap-icons">
-                        {Object.values(this.state.data).map((icon, index) => {
-                            return ([
-                                <i data-tip data-for={icon.class} id={icon.label} key={index} className='material-icons icons'>{icon.class}</i>,
-                                <ReactTooltip id={icon.class} key={icon.label} type="dark" effect="solid" place="top">
-                                    <span>
-                                        <code>&lt;i class='material-icons'>{icon.class}&lt;/i></code>
-                                    </span>
-                                </ReactTooltip>
-                            ]);
-                        })}
+                        {
+                            ((!this.state.data.length) ? (
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
+                                }}>
+                                    <ClipLoader
+                                        color={'#283593'}
+                                        loading={this.state.loading}
+                                    />
+                                </div>
+                            ) : (
+                                Object.values(this.state.data).map((icon, index) => {
+                                    return ([
+                                        <i data-tip data-for={icon.class} id={icon.label} key={index} className='material-icons icons'>{icon.class}</i>,
+                                        <ReactTooltip id={icon.class} key={icon.label} type="dark" effect="solid" place="top">
+                                            <span>
+                                                <code>&lt;i class='material-icons'>{icon.class}&lt;/i></code>
+                                            </span>
+                                        </ReactTooltip>
+                                    ]);
+                                })
+                            ))
+                        }
                     </div>
                     {
                         ((this.state.isError) 
