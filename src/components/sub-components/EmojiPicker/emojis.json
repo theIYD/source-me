@@ -646,5 +646,59 @@
         "code": "1F476",
         "char": "👶",
         "name": "baby"
+      },
+      {
+        "no": 109,
+        "code": "1F9D2",
+        "char": "🧒",
+        "name": "⊛ child"
+      },
+      {
+        "no": 110,
+        "code": "1F466",
+        "char": "👦",
+        "name": "boy"
+      },
+      {
+        "no": 111,
+        "code": "1F467",
+        "char": "👧",
+        "name": "girl"
+      },
+      {
+        "no": 112,
+        "code": "1F9D1",
+        "char": "🧑",
+        "name": "⊛ adult"
+      },
+      {
+        "no": 113,
+        "code": "1F468",
+        "char": "👨",
+        "name": "man"
+      },
+      {
+        "no": 114,
+        "code": "1F469",
+        "char": "👩",
+        "name": "woman"
+      },
+      {
+        "no": 115,
+        "code": "1F9D3",
+        "char": "🧓",
+        "name": "⊛ older adult"
+      },
+      {
+        "no": 116,
+        "code": "1F474",
+        "char": "👴",
+        "name": "old man"
+      },
+      {
+        "no": 117,
+        "code": "1F475",
+        "char": "👵",
+        "name": "old woman"
       }
 ]
