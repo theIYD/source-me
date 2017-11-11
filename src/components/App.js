@@ -11,15 +11,23 @@ import Icons from './sub-components/Icons';
 import Epsum from './sub-components/Epsum';
 import URLShortener from './sub-components/URLShortener';
 import EmojiPicker from './sub-components/EmojiPicker/EmojiPicker';
+
+import Home from './Home';
 import About from './About';
 
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  Switch
 } from 'react-router-dom';
 
 const routes = [
+  {
+    path: '/index.html',
+    exact: true,
+    main: () => <Home />
+  },
   {
     path: '/font',
     main: () => <Font url='https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBwIX97bVWr3-6AIUvGkcNnmFgirefZ6Sw' />
@@ -56,7 +64,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isActive: false
+      isActive: false,
+      main: ``
     }
     this.toggleModal = this.toggleModal.bind(this);
   }
@@ -89,6 +98,7 @@ class App extends React.Component {
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet" />
         <Router>
+        <Switch>
         <div style={{display: 'flex', height: '100%'}}>
           <nav className="navbar">
             <div className="nav-category">
@@ -140,10 +150,9 @@ class App extends React.Component {
               />
             ))}
           </div>
-          
-          
-          </div>
-        </Router>
+        </div>
+        </Switch>
+      </Router>
       </div>
     );
   }
