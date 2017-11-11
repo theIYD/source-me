@@ -65,7 +65,8 @@ class URLShortener extends Component {
                 shortURL: response.result.id
             });
           }, (error) => {
-                alert('Something went wrong. ${error}');
+                alert('Something went wrong.');
+                console.log(error);
                 document.querySelector('#url-form').reset();
           });
       }

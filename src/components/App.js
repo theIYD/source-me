@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import Modal from 'react-modal';
 
 const shell = require('electron').shell;
+const remote = require('electron').remote;
+import pjson from '../../package.json';
 
 import CDN from './sub-components/CDN';
 import Font from './sub-components/Font';
@@ -64,8 +66,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isActive: false,
-      main: ``
+      isActive: false
     }
     this.toggleModal = this.toggleModal.bind(this);
   }
@@ -88,6 +89,11 @@ class App extends React.Component {
     });
   }
 
+  closeWindow() {
+    let currentWindow = remote.getCurrentWindow();
+    currentWindow.close();
+  }
+
   openLink() {
     shell.openExternal('https://theiyd.github.io/theidrees.me');
   }
@@ -97,6 +103,19 @@ class App extends React.Component {
       <div id="app">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet" />
+        <button onClick={this.closeWindow.bind(this)} style={{
+          position: 'absolute',
+          top: '20px',
+          right: '20px',
+          zIndex: '999999',
+          background: 'transparent',
+          border: 'none',
+          fontWeight: 'bold',
+          WebkitTextStroke: '2px',
+          cursor: 'pointer'
+        }} id="close" type="button">
+          <span><i className="material-icons">&#xE5CD;</i></span>
+        </button>
         <Router>
         <Switch>
         <div style={{display: 'flex', height: '100%'}}>
@@ -139,6 +158,13 @@ class App extends React.Component {
               </Modal>
               <Link onClick={this.openLink.bind(this)} to="/#"><p>Developed with &#128156; by <strong>Idrees</strong></p></Link>
             </footer>
+            <em style={{
+              position: 'absolute',
+              bottom: '0',
+              marginBottom: '20px',
+              marginLeft: '20px',
+              fontSize: '10px'
+            }} className="version">Version: {pjson.version}</em>
           </nav>
           <div id="main" className="content container">
             {routes.map((route, index) => (

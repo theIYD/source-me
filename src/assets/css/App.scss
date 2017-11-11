@@ -11,7 +11,8 @@
 html {
   height: 100%;
   overflow: hidden;
-  background: $white;
+  background-color: $white;
+  background-image: $background;
 }
 
 body {
@@ -32,9 +33,9 @@ body {
 .navbar {
   width: 340px;
   flex: 3;
-  background: $grey-dark-accent-color;
+  background: $body-background;
   padding: 1em 0 2.5em 0;
-  border-right: 2px solid $grey-light-accent-color; 
+  //border-right: 2px solid $grey-light-accent-color; 
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
@@ -61,7 +62,7 @@ body {
     text-align: center;
     display: block;
     margin: 0 auto;
-    border-top: 1px solid $grey-light-accent-color;
+    //border-top: 1px solid $grey-light-accent-color;
 
     p {
       font-size: 13px;
@@ -80,6 +81,10 @@ body {
   font-size: 11px;
   font-weight: normal;
   text-transform: uppercase;
+
+  h3 {
+    color: $white;
+  }
 }
 
 .nav-item {
@@ -91,11 +96,12 @@ body {
     width: 100%;
     line-height: 2;
     text-align: left;
-    color: $grey-dark-color;
+    color: $white;
     font-weight: 500;
 
     &:hover {
-      background: $indigo-800;
+      text-decoration: underline;
+      font-weight: bold;
       color: $white;
       cursor: pointer;
     }
@@ -144,6 +150,9 @@ body {
     border: 1px solid $grey-light-accent-color;
     margin: 0.5em auto 0 auto;
   }
+  h2 {
+    color: $black;
+  }
   .dropdown {
     margin-top: 1em;
   }
@@ -156,7 +165,7 @@ body {
     margin: 0 auto;
     .cdn-link {
       margin-top: 2em;
-      color: $grey-paragraph;
+      color: $grey-dark-color;
       text-align: center;
       font-weight: 700;
       padding: 0.25em;
@@ -166,6 +175,7 @@ body {
 .about-library {
   margin: 2em 0;
   color: $grey-paragraph;
+  opacity: 0.6;
   text-align: center;
   a{
     text-decoration: underline inherit;
