@@ -1,3 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-stack-primary;
+}
+  
+html {
+    height: 100%;
+    overflow: hidden;
+    background-color: $white;
+    background-image: $background;
+}
+  
+body {
+    height: 100%;
+    display: flex;
+    min-height: 100%;
+}
+  
+#root {
+width: 100%;
+height: 100%;
+}
+
+#app {
+height: 100%;
+}
+
 pre {
     font-family: "Courier 10 Pitch", Courier, monospace;
     font-size: 95%;
