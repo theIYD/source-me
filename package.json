@@ -38,6 +38,7 @@
     "dotenv": "^4.0.0",
     "googleapis": "^22.2.0",
     "node-sass": "^4.5.3",
+    "node-url-shortener": "^1.0.1",
     "react-modal": "^3.1.0",
     "react-router-dom": "^4.2.2",
     "react-spinners": "^0.2.1",

@@ -43,8 +43,23 @@ function createWindow() {
   mainWindow.loadURL( indexPath );
 
   // Don't show until we are ready and loaded
+  let splash = new BrowserWindow({
+    width: 620,
+    height: 300,
+    frame: false,
+    backgroundColor: '#fff',
+    show: false
+  });
+  
+  splash.loadURL('file://' + __dirname + '/src/splash.html');
+
+  splash.show();
   mainWindow.once('ready-to-show', () => {
-    mainWindow.show();
+    splash.close();
+    
+    setTimeout(() => {
+      mainWindow.show();
+    }, 3000)
     // Open the DevTools automatically if developing
     mainWindow.webContents.openDevTools();
     /*if (dev) {

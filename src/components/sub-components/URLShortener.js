@@ -1,38 +1,19 @@
 import React, { Component } from 'react';
-const D_env = require('dotenv').config();
+import url_shortner from 'node-url-shortener';
 
 class URLShortener extends Component {
     constructor(props) {
         super(props);
         this.state = {
             shortURL: '',
-            longUrl: ''
+            longUrl: '',
         }
         this.getShortURL = this.getShortURL.bind(this);
-        this.loadURLShortenerAPI = this.loadURLShortenerAPI.bind(this);
         this.getInput = this.getInput.bind(this);
-    }
-
-    loadURLShortenerAPI() {
-        const gapiScript = document.createElement('script');
-        const API_KEY = process.env.API_KEY;
-
-        gapiScript.src = 'https://apis.google.com/js/api.js';
-
-        gapiScript.onload = () => {
-            gapi.load('client', () => {
-              gapi.client.setApiKey(API_KEY);
-              gapi.client.load('urlshortener', 'v1', () => {
-                this.setState({ gapiReady: true });
-              });
-            });
-          };
-        document.body.appendChild(gapiScript);
     }
 
     componentDidMount() {
         this._isMounted = true;
-        this.loadURLShortenerAPI();
     }
 
     componentWillUnMount() {
@@ -41,36 +22,17 @@ class URLShortener extends Component {
 
     getShortURL(e) {
         e.preventDefault();
-        const pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name and extension
-        '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-        '(\\:\\d+)?'+ // port
-        '(\\/[-a-z\\d%@_.~+&:]*)*'+ // path
-        '(\\?[;&a-z\\d%@_.,~+&:=-]*)?'+ // query string
-        '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-        
-      if(!pattern.test(this.state.longUrl)) {
-        alert("Please enter a valid URL.");
-        document.querySelector('#url-form').reset();
-
-      } else {
-        gapi.client.urlshortener.url.insert({
-            "resource": {
-              "longUrl": this.state.longUrl
-            },
-            "alt": "json"
-          })
-          .then((response) => {
+        url_shortner.short(`https://is.gd/create.php?format=simple&url=${this.state.longUrl}`, (err, url) => {
             this.setState({
-                shortURL: response.result.id
+                shortURL: url
             });
-          }, (error) => {
-                alert('Something went wrong.');
-                console.log(error);
-                document.querySelector('#url-form').reset();
-          });
-      }
+
+            if(err) {
+                console.log(err);
+            }
+        });
     }
+
     getInput(event) {
         this.setState({
             longUrl: event.target.value
@@ -110,11 +72,11 @@ class URLShortener extends Component {
                                 cursor: 'pointer'
                             }} type="submit" />
                         </form>
-                        <p style={{
-                            fontWeight: 'bold',
-                            marginTop: '20px',
-                            padding: '12px 36px'
-                        }}>{this.state.shortURL}</p>
+                            <p style={{
+                                fontWeight: 'bold',
+                                marginTop: '20px',
+                                padding: '12px 36px'
+                            }}>{this.state.shortURL}</p>
                     </div>
                 </section>
                 
