@@ -1,6 +1,6 @@
 {
   "name": "source-me",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tool which provides necessary tools needed for web development",
   "author": "Idrees Dargahwala",
   "repository": {
@@ -14,7 +14,7 @@
     "dev": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
     "build": "webpack --config webpack.build.config.js && npm run postpackage",
     "package": "webpack --config webpack.build.config.js",
-    "postpackage": "electron-packager ./ --out=./builds --overwrite --icon=src/assets/icons/win/iconWin.ico --prune=true --version-string.CompanyName=CE --version-string.FileDescription=CE"
+    "postpackage": "electron-packager ./ --out=./builds --disable-gpu --force-gpu-rasterization --overwrite --icon=src/assets/icons/win/iconWin.ico --prune=true --version-string.CompanyName=CE --version-string.FileDescription=CE"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

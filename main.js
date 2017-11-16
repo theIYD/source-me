@@ -22,7 +22,7 @@ function createWindow() {
     height: 840,
     frame: false,
     backgroundColor: '#7E57C2',
-    icon: '/src/assets/icons/win/logo2.png.ico',
+    icon: '/src/assets/icons/win/iconWin.ico',
     show: false
   });
 
@@ -50,7 +50,7 @@ function createWindow() {
     height: 300,
     frame: false,
     backgroundColor: '#fff',
-    icon: '/src/assets/icons/win/logo2.png.ico',
+    icon: '/src/assets/icons/win/iconWin.ico',
     show: false
   });
   
@@ -64,10 +64,9 @@ function createWindow() {
       mainWindow.show();
     }, 3000)
     // Open the DevTools automatically if developing
-    mainWindow.webContents.openDevTools();
-    /*if (dev) {
-      
-    }*/
+    if (dev) {
+      mainWindow.webContents.openDevTools();
+    }
   });
 
   // Emitted when the window is closed.
