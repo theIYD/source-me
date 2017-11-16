@@ -23,7 +23,7 @@ import {
 
 const routes = [
   {
-    path: '/index.html',
+    path: './',
     exact: true,
     main: () => <Home />
   },

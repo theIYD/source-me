@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
-
-const shell = require('electron').shell;
 import pjson from '../../package.json';
-
 import About from './About';
 
 import {
@@ -30,10 +27,6 @@ class Nav extends Component {
         this.setState({
           isActive: !this.state.isActive
         });
-      }
-
-      openLink() {
-        shell.openExternal('https://theiyd.github.io/theidrees.me');
       }
 
     render() {
@@ -78,8 +71,6 @@ class Nav extends Component {
                         <Modal isOpen={this.state.isActive}>
                             <About toggle={this.toggleModal} />
                         </Modal>
-
-                        <Link onClick={this.openLink.bind(this)} to="/#"><p>Developed with &#128156; by <strong>Idrees</strong></p></Link>
                     </footer>
 
                         <em style={{
