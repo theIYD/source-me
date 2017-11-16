@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../assets/images/logo.png';
+import logo from '../assets/images/logo2.png';
 
 class About extends React.Component {
 
