@@ -17,14 +17,27 @@ if ( process.defaultApp || /[\\/]electron-prebuilt[\\/]/.test(process.execPath) 
 
 function createWindow() {
   // Create the browser window.
-  mainWindow = new BrowserWindow({
+  let config = {
     width: 1024,
     height: 840,
     frame: false,
     backgroundColor: '#7E57C2',
     icon: 'src/assets/icons/win/iconWin.ico',
     show: false
-  });
+  }
+
+  if(/^win/.test(process.platform)) {
+    config = {
+      width: 1024,
+      height: 840,
+      backgroundColor: '#7E57C2',
+      autoHideMenuBar: true,
+      icon: 'src/assets/icons/win/iconWin.ico',
+      show: false
+    }
+  }
+
+  mainWindow = new BrowserWindow(config);
 
   // and load the index.html of the app.
   let indexPath;

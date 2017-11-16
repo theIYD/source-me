@@ -4,12 +4,12 @@ import Nav from './Nav';
 
 const remote = require('electron').remote;
 
-import CDN from './sub-components/CDN';
-import Font from './sub-components/Font';
-import Colors from './sub-components/Colors';
-import Icons from './sub-components/Icons';
-import Epsum from './sub-components/Epsum';
-import URLShortener from './sub-components/URLShortener';
+import CDN from './sub-components/CDN/CDN';
+import Font from './sub-components/Font/Font';
+import Colors from './sub-components/Colors/Colors';
+import Icons from './sub-components/Icons/Icons';
+import Epsum from './sub-components/Epsum/Epsum';
+import URLShortener from './sub-components/URLShortener/URLShortener';
 import EmojiPicker from './sub-components/EmojiPicker/EmojiPicker';
 
 import Home from './Home';
@@ -80,19 +80,21 @@ class App extends React.Component {
       <div id="app">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet" />
-        <button onClick={this.closeWindow.bind(this)} style={{
-          position: 'absolute',
-          top: '20px',
-          right: '20px',
-          zIndex: '999999',
-          background: 'transparent',
-          border: 'none',
-          fontWeight: 'bold',
-          WebkitTextStroke: '2px',
-          cursor: 'pointer'
-        }} id="close" type="button">
-          <span><i className="material-icons">&#xE5CD;</i></span>
-        </button>
+        {(process.platform === 'win32') ? null : (
+          <button onClick={this.closeWindow.bind(this)} style={{
+            position: 'absolute',
+            top: '20px',
+            right: '20px',
+            zIndex: '999999',
+            background: 'transparent',
+            border: 'none',
+            fontWeight: 'bold',
+            WebkitTextStroke: '2px',
+            cursor: 'pointer'
+          }} id="close" type="button">
+            <span><i className="material-icons">&#xE5CD;</i></span>
+          </button>
+        )}
         <Router>
           <Switch>
             <div style={{display: 'flex', height: '100%'}}>
@@ -114,5 +116,21 @@ class App extends React.Component {
     );
   }
 }
+
+/**
+ * <button onClick={this.closeWindow.bind(this)} style={{
+          position: 'absolute',
+          top: '20px',
+          right: '20px',
+          zIndex: '999999',
+          background: 'transparent',
+          border: 'none',
+          fontWeight: 'bold',
+          WebkitTextStroke: '2px',
+          cursor: 'pointer'
+        }} id="close" type="button">
+          <span><i className="material-icons">&#xE5CD;</i></span>
+        </button>
+ */
 
 export default App;
