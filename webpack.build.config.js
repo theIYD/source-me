@@ -18,6 +18,10 @@ module.exports = {
     publicPath: './',
     filename: 'bundle.js'
   },
+  node: {
+    __dirname: false,
+    __filename: false
+  },
   module: {
     rules: [
       {

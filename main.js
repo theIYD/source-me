@@ -22,6 +22,7 @@ function createWindow() {
     height: 840,
     frame: false,
     backgroundColor: '#7E57C2',
+    icon: '/src/assets/icons/win/logo2.png.ico',
     show: false
   });
 
@@ -49,6 +50,7 @@ function createWindow() {
     height: 300,
     frame: false,
     backgroundColor: '#fff',
+    icon: '/src/assets/icons/win/logo2.png.ico',
     show: false
   });
   
