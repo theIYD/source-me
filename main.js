@@ -23,6 +23,8 @@ function createWindow() {
     frame: false,
     backgroundColor: '#7E57C2',
     icon: 'src/assets/icons/win/iconWin.ico',
+    resizable: false,
+    maximizable: false,
     show: false
   }
 
@@ -36,7 +38,6 @@ function createWindow() {
       show: false
     }
   }
-
   mainWindow = new BrowserWindow(config);
 
   // and load the index.html of the app.
@@ -62,7 +63,8 @@ function createWindow() {
     frame: false,
     backgroundColor: '#fff',
     icon: 'src/assets/icons/win/iconWin.ico',
-    alwaysOnTop: true
+    alwaysOnTop: true,
+    show: false
   });
   
   splash.loadURL('file://' + __dirname + '/src/splash.html');

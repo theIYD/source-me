@@ -117,20 +117,4 @@ class App extends React.Component {
   }
 }
 
-/**
- * <button onClick={this.closeWindow.bind(this)} style={{
-          position: 'absolute',
-          top: '20px',
-          right: '20px',
-          zIndex: '999999',
-          background: 'transparent',
-          border: 'none',
-          fontWeight: 'bold',
-          WebkitTextStroke: '2px',
-          cursor: 'pointer'
-        }} id="close" type="button">
-          <span><i className="material-icons">&#xE5CD;</i></span>
-        </button>
- */
-
 export default App;
