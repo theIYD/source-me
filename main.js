@@ -63,8 +63,7 @@ function createWindow() {
     frame: false,
     backgroundColor: '#fff',
     icon: 'src/assets/icons/win/iconWin.ico',
-    alwaysOnTop: true,
-    show: false
+    alwaysOnTop: true
   });
   
   splash.loadURL('file://' + __dirname + '/src/splash.html');
