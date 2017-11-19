@@ -65,7 +65,15 @@ class Nav extends Component {
                             border: 'none',
                             cursor: 'pointer',
                             overflow: 'hidden',
-                            outline: 'none'
+                            outline: 'none',
+                            color: '#fff',
+                            position: 'absolute',
+                            bottom: '0',
+                            left: '280px',
+                            marginBottom: '20px',
+                            marginRight: '20px',
+                            opacity: '0.6',
+                            fontSize: '12px'
                         }} onClick={this.toggleModal}>About</button></a></h6>
                         
                         <Modal isOpen={this.state.isActive}>
