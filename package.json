@@ -12,9 +12,9 @@
   "scripts": {
     "prod": "webpack --config webpack.build.config.js && electron --noDevServer .",
     "dev": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
-    "build": "webpack --config webpack.build.config.js && npm run postpackage",
+    "build": "webpack --config webpack.build.config.js",
     "package": "webpack --config webpack.build.config.js",
-    "postpackage": "electron-packager ./ --out=./builds --disable-gpu --force-gpu-rasterization --overwrite --icon=src/assets/icons/win/iconWin.ico --prune=true --version-string.CompanyName=CE --version-string.FileDescription=CE"
+    "postpackage-win": "npm run build && electron-packager ./ --out=./builds --disable-gpu --force-gpu-rasterization --overwrite --icon=src/assets/icons/win/iconWin.ico --prune=true --version-string.CompanyName=CE --version-string.FileDescription=CE"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
