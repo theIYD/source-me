@@ -60,17 +60,7 @@ class URLShortener extends Component {
                                 display: 'block',
                                 textAlign: 'center'
                             }} onChange={event => this.getInput(event)} type="text" placeholder="Place your url" required />
-                            <input style={{
-                                background: '#7f8ff4',
-                                color: '#fff',
-                                boxShadow: '0 0 10px 2px rgba(0, 0, 0, 0.1)',
-                                borderRadius: '2px',
-                                padding: '12px 36px',
-                                marginTop: '20px',
-                                outline: 'none',
-                                border: '0',
-                                cursor: 'pointer'
-                            }} type="submit" />
+                            <input type="submit" className='submit'/>
                         </form>
                             <p style={{
                                 fontWeight: 'bold',

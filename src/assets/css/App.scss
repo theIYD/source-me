@@ -219,3 +219,22 @@
     box-shadow: 6px 6px 10px 1px rgba(0, 0, 0, 0.5); 
   }
 }
+
+.submit {
+  background: #7f8ff4;
+  color: $white;
+  border-radius: 2px;
+  padding: 12px 36px;
+  margin-top: 20px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  transition: background-color ease-in-out 200ms;
+  -webkit-box-shadow: 5px 4px 8px -2px rgba(0,0,0,0.54);
+  -moz-box-shadow: 5px 4px 8px -2px rgba(0,0,0,0.54);
+  box-shadow: 5px 4px 8px -2px rgba(0,0,0,0.54);
+
+  &:hover {
+    background-color: $indigo-800 !important; 
+  }
+}

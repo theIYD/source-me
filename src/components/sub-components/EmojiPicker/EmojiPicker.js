@@ -45,7 +45,8 @@ class EmojiPicker extends Component {
             <section className="wrapper">
                 <h2 style={{textAlign: 'center'}}>Emoji Picker</h2>
                 <hr />
-                <div className="wrap-emojis" style={{textAlign: 'center', position: 'relative', top: '2em'}}>
+                <p className="about-library">A small digital image or icon used to express an idea or emotion in electronic communication.</p>
+                <div className="wrap-emojis" style={{textAlign: 'center', position: 'relative', top: '1em'}}>
                 {
                     ((!this.state.data.length) ? (
                         <div style={{
