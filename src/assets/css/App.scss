@@ -1,0 +1,240 @@
+@import 'variables';
+@import 'globals';
+
+.navbar {
+  width: 350px;
+  flex: 3;
+  background: $body-background;
+  padding: 1em 0 2.5em 0;
+  //border-right: 2px solid $grey-light-accent-color; 
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    background-color: $grey-dark-accent-color;
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color: $indigo-300;
+    border-radius: 10px;
+  }
+
+  .m-icon {
+    position: relative;
+    top: 6px;
+    right: 6px;
+  }
+
+  .about-navigate {
+    /*position: relative;
+    top: 4em;
+    padding: 2em 0; 
+    text-align: center;
+    display: block;
+    margin: 0 auto;*/
+    //border-top: 1px solid $grey-light-accent-color;
+
+    p {
+      font-size: 13px;
+      margin-top: 10px;
+    }
+    a{
+      text-decoration: none;
+      color: $grey-600;
+    }
+  }
+}
+
+.nav-category {
+  margin: .2em 0;
+  padding-left: 2rem;
+  font-size: 11px;
+  font-weight: normal;
+  text-transform: uppercase;
+
+  h3 {
+    color: $white;
+  }
+}
+
+.nav-item {
+  padding: 0.25em 0 0.25em 0;
+
+  h5 {
+    padding: .3rem 0 .3rem .3rem;
+    padding-left: calc(2rem + 16px + .5rem);
+    width: 100%;
+    line-height: 2;
+    text-align: left;
+    color: $white;
+    font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+      font-weight: bold;
+      color: $white;
+      cursor: pointer;
+    }
+    
+    a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}
+
+.container {
+  flex: 5;
+  position: relative;
+  opacity: 1;
+  min-height: 100%;
+}
+
+.about {
+  text-align: center;
+  img {
+    margin-top: 4em;
+    width: 200px;
+    height: 200px;
+  }
+  .about-sourceme {
+    margin-top: 20px;
+    p {
+        line-height: 1.2;
+        color: $grey-paragraph;
+        font-family: $font-stack-secondary;
+        font-size: 17px;
+        font-weight: 400;
+    }
+  }
+}
+
+.wrapper {
+  padding: 2em 3em 1em 3em;
+  position: relative;
+  display: block;
+  top: 2em;
+  hr {
+    width: 25%;
+    border: 1px solid $grey-light-accent-color;
+    margin: 0.5em auto 0 auto;
+  }
+  h2 {
+    color: $black;
+  }
+  .dropdown {
+    margin-top: 1em;
+  }
+}
+.cdn {
+  text-align: center;
+  .color-cdn-link {
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+    .cdn-link {
+      margin-top: 2em;
+      color: $grey-dark-color;
+      text-align: center;
+      font-weight: 700;
+      padding: 0.25em;
+    }
+  }
+}
+.about-library {
+  margin: 2em 0;
+  color: $grey-paragraph;
+  opacity: 0.6;
+  text-align: center;
+  a{
+    text-decoration: underline inherit;
+    color: inherit;
+  }
+}
+
+.wrap-colors {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block; 
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 2em;
+
+  .color-div {
+    width: 80px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  } 
+}
+
+.wrap-icons, .wrap-ipsum, .wrap-emojis {
+  margin: 0 0 0 2em;
+  max-height: 450px;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    background-color: $grey-dark-accent-color;
+  }
+  &::-webkit-scrollbar-thumb{
+    background-color: $grey-paragraph;
+    border-radius: 10px;
+  }
+  .icons {
+    margin-right: 1em;
+  }
+}
+
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0,0,0, 0.5);
+
+  .popup_inner {
+    position: absolute;
+    left: 35%;
+    right: 35%;
+    top: 35%;
+    bottom: 35%;
+    margin: auto;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 6px 6px 10px 1px rgba(0, 0, 0, 0.5); 
+  }
+}
+
+.submit {
+  background: #7f8ff4;
+  color: $white;
+  border-radius: 2px;
+  padding: 12px 36px;
+  margin-top: 20px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  transition: background-color ease-in-out 200ms;
+  -webkit-box-shadow: 5px 4px 8px -2px rgba(0,0,0,0.54);
+  -moz-box-shadow: 5px 4px 8px -2px rgba(0,0,0,0.54);
+  box-shadow: 5px 4px 8px -2px rgba(0,0,0,0.54);
+
+  &:hover {
+    background-color: $indigo-800 !important; 
+  }
+}

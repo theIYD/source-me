@@ -1,41 +1,49 @@
 {
-  "name": "Source-Me",
-  "version": "0.0.30",
-  "description": "A small app which provides necessary tools for web development.",
+  "name": "source-me",
+  "version": "0.1.1",
+  "description": "A tool which provides necessary tools needed for web development",
+  "author": "Idrees Dargahwala",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theIYD/source-me"
+  },
+  "license": "MIT",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "begin": "gulp delete && gulp copy && gulp concat-css && npm start",
-    "zip-linux": "bestzip source-me-linux-x64.zip Source-Me-linux-x64",
-    "zip-win": "bestzip source-me-win-x64.zip Source-Me-win32-x64",
-    "zip-mac": "bestzip source-me-darwin-x64.zip Source-Me-darwin-x64",
-    "package-linux": "asar pack Source-Me-linux-x64/resources/app Source-Me-linux-x64/resources/app.asar",
-    "package-win": "asar pack Source-Me-win32-x64/resources/app Source-Me-win32-x64/resources/app.asar",
-    "build-linux": "electron-packager . Source-Me --platform=linux arch=x64 --overwrite",
-    "build-mac": "electron-packager . Source-Me --overwrite --platform=darwin --arch=x64 --icon=build/assets/img/logo.icns",
-    "build-win": "electron-packager . Source-Me --platform=win32 arch=x32 --overwrite --icon=build/assets/img/logo.ico",
-    "build": "npm run build-linux && npm run build-win && npm run build-mac && npm run package-linux && npm run package-win && npm run zip-linux && npm run zip-win && npm run zip-mac"
+    "prod": "webpack --config webpack.build.config.js && electron --noDevServer .",
+    "dev": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
+    "build": "webpack --config webpack.build.config.js",
+    "package": "webpack --config webpack.build.config.js",
+    "postpackage-win": "npm run build && electron-packager ./ --out=./builds --disable-gpu --force-gpu-rasterization --overwrite --icon=src/assets/icons/win/iconWin.ico --prune=true --version-string.CompanyName=CE --version-string.FileDescription=CE"
   },
-  "author": "Idrees Dargahwala <dargahidrees@gmail.com>",
-  "license": "MIT",
-
-  "repository": "https://github.com/theIYD/source-me#readme",
-  "keywords": [
-    "Source Me",
-    "Web Toolkit",
-    "Electron"  
-  ],
-
   "devDependencies": {
-    "asar": "^0.13.0",
-    "electron": "~1.6.2",
-    "electron-packager": "^8.7.2",
-    "gulp-clean-css": "^3.7.0",
-    "gulp-concat": "^2.6.1"
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-react": "^6.24.1",
+    "babili-webpack-plugin": "^0.1.2",
+    "css-loader": "^0.28.1",
+    "electron": "^1.7.8",
+    "electron-packager": "^9.1.0",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.28.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
-    "bestzip": "^1.1.4",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1"
+    "axios": "^0.17.0",
+    "dotenv": "^4.0.0",
+    "googleapis": "^22.2.0",
+    "node-sass": "^4.5.3",
+    "node-url-shortener": "^1.0.1",
+    "react-modal": "^3.1.0",
+    "react-router-dom": "^4.2.2",
+    "react-spinners": "^0.2.1",
+    "react-tooltip": "^3.4.0",
+    "sass-loader": "^6.0.6",
+    "webfontloader": "^1.6.28"
   }
 }

@@ -1,152 +1,103 @@
-const electron = require('electron')
-const app = electron.app
-const {BrowserWindow, Tray} = require('electron')
+'use strict';
 
+// Import parts of electron to use
+const {app, BrowserWindow} = require('electron');
 const path = require('path')
 const url = require('url')
-const Menu = electron.Menu
-const ipc = electron.ipcMain
-const dialog = electron.dialog
-const globalShortcut = electron.globalShortcut
-let quote = require('./build/assets/js/quote.js')
 
-let mainWindow
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+let mainWindow;
 
-function createWindow () {
+// Keep a reference for dev mode
+let dev = false;
+if ( process.defaultApp || /[\\/]electron-prebuilt[\\/]/.test(process.execPath) || /[\\/]electron[\\/]/.test(process.execPath) ) {
+  dev = true;
+}
+
+function createWindow() {
   // Create the browser window.
-  let windowOptions = {
-    width: 1080,
-    minWidth: 680,
+  let config = {
+    width: 1024,
     height: 840,
-    autoHideMenuBar: true
+    frame: false,
+    backgroundColor: '#7E57C2',
+    icon: 'src/assets/icons/win/iconWin.ico',
+    resizable: false,
+    alwaysOnTop: true,
+    maximizable: false,
+    show: false
   }
 
-  if (process.platform === 'linux') {
-    windowOptions.icon = path.join(__dirname, '/build/assets/img/logo.png')
+  if(/^win/.test(process.platform)) {
+    config = {
+      width: 1024,
+      height: 840,
+      backgroundColor: '#7E57C2',
+      autoHideMenuBar: true,
+      icon: 'src/assets/icons/win/iconWin.ico',
+      show: false
+    }
   }
-
-  mainWindow = new BrowserWindow(windowOptions)
+  mainWindow = new BrowserWindow(config);
 
   // and load the index.html of the app.
-  mainWindow.loadURL(url.format({
-    pathname: path.join(__dirname, 'index.html'),
-    protocol: 'file:',
-    slashes: true
-  }))
+  let indexPath;
+  if ( dev && process.argv.indexOf('--noDevServer') === -1 ) {
+    indexPath = url.format({
+      protocol: 'http:',
+      host: 'localhost:8080',
+      pathname: 'index.html',
+      slashes: true
+    });
+  } else {
+    indexPath = url.format({
+      protocol: 'file:',
+      pathname: path.join(__dirname, 'dist', 'index.html'),
+      slashes: true
+    });
+  }
+
+  mainWindow.loadURL( indexPath );
+
+  // Don't show until we are ready and loaded
+  
+  mainWindow.once('ready-to-show', () => {
+    
+    mainWindow.show();
+    // Open the DevTools automatically if developing
+    if (dev) {
+      mainWindow.webContents.openDevTools();
+    }
+  });
 
   // Emitted when the window is closed.
-  mainWindow.on('closed', function () {
-    mainWindow = null
-  })
+  mainWindow.on('closed', function() {
+    // Dereference the window object, usually you would store windows
+    // in an array if your app supports multi windows, this is the time
+    // when you should delete the corresponding element.
+    mainWindow = null;
+  });
 }
 
-app.on('ready', createWindow)
-app.on('ready', () => {
-  globalShortcut.register('CommandOrControl+Alt+Q', function () {
-    mainWindow.close()
-  })
-})
+// This method will be called when Electron has finished
+// initialization and is ready to create browser windows.
+// Some APIs can only be used after this event occurs.
+app.on('ready', createWindow);
 
 // Quit when all windows are closed.
-app.on('window-all-closed', function () {
-  if (process.platform !== 'darwin') {
-    app.quit()
-  }
-})
-
-app.on('activate', function () {
-  if (mainWindow === null) {
-    createWindow()
-  }
-})
-
-app.on('will-quit', () => {
-  globalShortcut.unregisterAll()
-})
-
-//a function to open external links in BrowserWindows
-function openSourcesInBrowserWindows(url) {
-    let win = new BrowserWindow({ 
-      width: 1200, 
-      height: 720
-     })
-    win.on('close', function () { win = null })
-    win.loadURL(url)
-    win.show()
-}
-
-let appIcon = null
-let iconName
-
-//put icon in tray
-ipc.on('put-in-tray', (event) => {
-  if (process.platform === 'win32') {
-    iconName = '/build/assets/img/logo.ico'
-  } else {
-    iconName = '/build/assets/img/logo.png'
-  }
-
-  const iconPath = path.join(__dirname, iconName)
-  appIcon = new Tray(iconPath)
-  const contextMenu = Menu.buildFromTemplate([
-
-    {
-      label: 'About',
-      click: () => {
-        openSourcesInBrowserWindows('https://theiyd.github.io/source-me/index.html')
-      }
-    },
-
-    {
-      label: 'Quote of the Day',
-      click: () => {
-        quote.quoteWindow()
-      }
-    },
-
-    {
-      label: 'Other Resources',
-      submenu: [
-        {
-          label: 'JSPlaygrounds',
-          click: () => {
-            openSourcesInBrowserWindows('https://stephengrider.github.io/JSPlaygrounds/')
-          }
-        },
-
-        {
-          label: 'W3Schools',
-          click: () => {
-            openSourcesInBrowserWindows('https://www.w3schools.com/')
-          }
-        },
-
-        {
-          label: 'CSS Tricks',
-          click: () => {
-            openSourcesInBrowserWindows('https://css-tricks.com/');
-          }
-        }
-      ]
-    },
-
-    {
-      label: 'Quit',
-      click: () => {
-        app.quit()
-      }
-    }])
-
-  appIcon.setToolTip('Source Me in tray.')
-  appIcon.setContextMenu(contextMenu)
-})
-
-ipc.on('remove-tray', () => {
-  appIcon.destroy()
-})
-
 app.on('window-all-closed', () => {
-  if (appIcon) {
-    appIcon.destroy()
+  // On macOS it is common for applications and their menu bar
+  // to stay active until the user quits explicitly with Cmd + Q
+  if (process.platform !== 'darwin') {
+    app.quit();
   }
-})
+});
+
+app.on('activate', () => {
+  // On macOS it's common to re-create a window in the app when the
+  // dock icon is clicked and there are no other windows open.
+  if (mainWindow === null) {
+    createWindow();
+  }
+});
