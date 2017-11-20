@@ -24,6 +24,7 @@ function createWindow() {
     backgroundColor: '#7E57C2',
     icon: 'src/assets/icons/win/iconWin.ico',
     resizable: false,
+    alwaysOnTop: true,
     maximizable: false,
     show: false
   }
@@ -57,25 +58,13 @@ function createWindow() {
     });
   }
 
-  let splash = new BrowserWindow({
-    width: 620,
-    height: 250,
-    frame: false,
-    backgroundColor: '#fff',
-    icon: 'src/assets/icons/win/iconWin.ico',
-    alwaysOnTop: true
-  });
-  
-  splash.loadURL('file://' + __dirname + '/src/splash.html');
   mainWindow.loadURL( indexPath );
 
   // Don't show until we are ready and loaded
   
   mainWindow.once('ready-to-show', () => {
-    splash.destroy();
-    setTimeout(() => {
-      mainWindow.show();
-    }, 3000);
+    
+    mainWindow.show();
     // Open the DevTools automatically if developing
     if (dev) {
       mainWindow.webContents.openDevTools();
