@@ -34,8 +34,10 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "@xkeshi/image-compressor": "^0.5.2",
     "axios": "^0.17.0",
     "dotenv": "^4.0.0",
+    "file-saver": "^1.3.3",
     "googleapis": "^22.2.0",
     "node-sass": "^4.5.3",
     "node-url-shortener": "^1.0.1",

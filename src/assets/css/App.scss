@@ -238,3 +238,34 @@
     background-color: $indigo-800 !important; 
   }
 }
+
+.containFile {
+  overflow: hidden;
+  position: relative;
+  padding: 0.5em 1em;
+  background-color: #7f8ff4;
+  border-radius: 5px;
+  color: $white;
+  font-size: 14px;
+  transition: background-color ease-in-out 200ms;
+  -webkit-box-shadow: 5px 4px 8px -2px rgba(0,0,0,0.54);
+  -moz-box-shadow: 5px 4px 8px -2px rgba(0,0,0,0.54);
+  box-shadow: 5px 4px 8px -2px rgba(0,0,0,0.54);
+
+  &:hover {
+    background-color: $indigo-800 !important; 
+  }
+}
+
+.containFile [type=file] {
+  cursor: pointer;
+  display: block;
+  filter: alpha(opacity=0);
+  min-height: 100%;
+  min-width: 100%;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  top: 0;
+}

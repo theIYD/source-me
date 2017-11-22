@@ -57,6 +57,9 @@ class Nav extends Component {
                     <div className="nav-item">
                         <h5><Link to="/emojis"><i className="material-icons md-dark md-36 m-icon">&#xE24E;</i>Emoji Picker</Link></h5>
                     </div>
+                    <div className="nav-item">
+                        <h5><Link to="/imagecompress"><i className="material-icons md-dark md-36 m-icon">&#xE24E;</i>Image Compress</Link></h5>
+                    </div>
 
                     <footer className="about-navigate">
                         <h6><a><button style={{

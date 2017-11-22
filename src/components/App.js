@@ -11,6 +11,7 @@ import Icons from './sub-components/Icons/Icons';
 import Epsum from './sub-components/Epsum/Epsum';
 import URLShortener from './sub-components/URLShortener/URLShortener';
 import EmojiPicker from './sub-components/EmojiPicker/EmojiPicker';
+import ImageCompressor from './sub-components/ImageCompressor/ImageCompressor';
 
 import Home from './Home';
 
@@ -54,6 +55,10 @@ const routes = [
   {
     path: '/emojis',
     main: () => <EmojiPicker url='https://raw.githubusercontent.com/theIYD/source-me/development/src/components/sub-components/EmojiPicker/emojis.json' />
+  },
+  {
+    path: '/imagecompress',
+    main: () => <ImageCompressor />
   }
 ];
 
