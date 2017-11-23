@@ -20,24 +20,11 @@ function createWindow() {
   let config = {
     width: 1024,
     height: 840,
-    frame: false,
     backgroundColor: '#7E57C2',
     icon: 'src/assets/icons/win/iconWin.ico',
     resizable: false,
-    alwaysOnTop: true,
     maximizable: false,
     show: false
-  }
-
-  if(/^win/.test(process.platform)) {
-    config = {
-      width: 1024,
-      height: 840,
-      backgroundColor: '#7E57C2',
-      autoHideMenuBar: true,
-      icon: 'src/assets/icons/win/iconWin.ico',
-      show: false
-    }
   }
   mainWindow = new BrowserWindow(config);
 

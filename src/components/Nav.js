@@ -37,7 +37,7 @@ class Nav extends Component {
                         <h3>Tools &amp; Utilities</h3>
                     </div>
                     <div className="nav-item">
-                        <h5><Link to="/colors"><i className="material-icons md-dark md-36 m-icon">&#xE891;</i>Material Colors from <strong>Google</strong></Link></h5>
+                        <h5><Link to="/colors"><i className="material-icons md-dark md-36 m-icon">&#xE3B7;</i>Material Colors from <strong>Google</strong></Link></h5>
                     </div>
                     <div className="nav-item">
                         <h5><Link to="/cdn"><i className="material-icons md-dark md-36 m-icon">&#xE252;</i>Content Delivery Networks Library from <strong>cdnjs</strong></Link></h5>
@@ -58,7 +58,7 @@ class Nav extends Component {
                         <h5><Link to="/emojis"><i className="material-icons md-dark md-36 m-icon">&#xE24E;</i>Emoji Picker</Link></h5>
                     </div>
                     <div className="nav-item">
-                        <h5><Link to="/imagecompress"><i className="material-icons md-dark md-36 m-icon">&#xE24E;</i>Image Compress</Link></h5>
+                        <h5><Link to="/imagecompress"><i className="material-icons md-dark md-36 m-icon">&#xE251;</i>Image Compress</Link></h5>
                     </div>
 
                     <footer className="about-navigate">
