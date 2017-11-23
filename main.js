@@ -21,7 +21,8 @@ function createWindow() {
     width: 1024,
     height: 840,
     backgroundColor: '#7E57C2',
-    icon: 'src/assets/icons/win/iconWin.ico',
+    autoHideMenuBar: true,
+    icon: path.join(__dirname, 'src/assets/icons/linux/iconLinux.png'),
     resizable: false,
     maximizable: false,
     show: false
@@ -44,6 +45,8 @@ function createWindow() {
       slashes: true
     });
   }
+
+
 
   mainWindow.loadURL( indexPath );
 
