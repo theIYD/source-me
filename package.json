@@ -14,8 +14,8 @@
     "dev": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
     "build": "webpack --config webpack.build.config.js",
     "package": "webpack --config webpack.build.config.js",
-    "postpackage-win": "npm run build && electron-packager ./ --out=./builds --disable-gpu --force-gpu-rasterization --overwrite --icon=src/assets/icons/win/iconWin.ico --prune=true --version-string.CompanyName=CE --version-string.FileDescription=CE",
-    "postpackage-linux": "npm run build && electron-packager ./ --overwrite --platform=linux --arch=x64 --icon=src/assets/icons/linux/iconLinux.png --prune=true --out=builds"
+    "postpackage-win": "npm run build && electron-packager ./ --out=./builds --disable-gpu --force-gpu-rasterization --overwrite --platform=win32 arch=x32 --icon=src/assets/icons/win/iconWin.ico --prune=true --version-string.CompanyName=CE --version-string.FileDescription=CE",
+    "postpackage-linux": "npm run build && electron-packager ./ --overwrite --platform=linux --arch=x64 --icon=src/assets/icons/linux/iconLinux.png --prune=true --out=builds && bestzip release-builds/source-me-linux-x64.zip builds/source-me-linux-x64"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",
@@ -37,6 +37,7 @@
   "dependencies": {
     "@xkeshi/image-compressor": "^0.5.2",
     "axios": "^0.17.0",
+    "bestzip": "^1.1.4",
     "dotenv": "^4.0.0",
     "file-saver": "^1.3.3",
     "node-sass": "^4.5.3",
