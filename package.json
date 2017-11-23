@@ -14,7 +14,7 @@
     "dev": "webpack-dev-server --hot --host 0.0.0.0 --config=./webpack.dev.config.js",
     "build": "webpack --config webpack.build.config.js",
     "package": "webpack --config webpack.build.config.js",
-    "postpackage-win": "npm run build && electron-packager ./ --out=./builds --disable-gpu --force-gpu-rasterization --overwrite --platform=win32 arch=x32 --icon=src/assets/icons/win/iconWin.ico --prune=true --version-string.CompanyName=CE --version-string.FileDescription=CE",
+    "postpackage-win": "npm run build && electron-packager ./ --out=./builds --overwrite --platform=win32 --arch=ia32 --icon=src/assets/icons/win/iconWin.ico --prune=true && bestzip release-builds/source-me-win-x64.zip builds/source-me-win32-ia32",
     "postpackage-linux": "npm run build && electron-packager ./ --overwrite --platform=linux --arch=x64 --icon=src/assets/icons/linux/iconLinux.png --prune=true --out=builds && bestzip release-builds/source-me-linux-x64.zip builds/source-me-linux-x64"
   },
   "devDependencies": {
