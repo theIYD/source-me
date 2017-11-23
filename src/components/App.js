@@ -2,8 +2,6 @@ import '../assets/css/App.scss';
 import React, { Component } from 'react';
 import Nav from './Nav';
 
-const remote = require('electron').remote;
-
 import CDN from './sub-components/CDN/CDN';
 import Font from './sub-components/Font/Font';
 import Colors from './sub-components/Colors/Colors';
@@ -75,31 +73,11 @@ class App extends Component {
     this._isMounted = false;  
   }
 
-  closeWindow() {
-    let currentWindow = remote.getCurrentWindow();
-    currentWindow.close();
-  }
-
   render() {
     return (
       <div id="app">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet" />
-        {(process.platform === 'win32') ? null : (
-          <button onClick={this.closeWindow.bind(this)} style={{
-            position: 'absolute',
-            top: '20px',
-            right: '20px',
-            zIndex: '999999',
-            background: 'transparent',
-            border: 'none',
-            fontWeight: 'bold',
-            WebkitTextStroke: '2px',
-            cursor: 'pointer'
-          }} id="close" type="button">
-            <span><i className="material-icons">&#xE5CD;</i></span>
-          </button>
-        )}
         <Router>
           <Switch>
             <div style={{display: 'flex', height: '100%'}}>

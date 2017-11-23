@@ -40,7 +40,7 @@ class ImageCompressor extends Component {
                 <section className='wrapper'>
                     <h2 style={{textAlign: 'center'}}>Image Compressor</h2>
                     <hr />
-                    <p className="about-library">URL shortening is a technique on the World Wide Web in which a Uniform Resource Locator (URL) may be made substantially shorter and still direct to the required page. This is achieved by using a redirect which links to the web page that has a long URL.</p>
+                    <p className="about-library">It is a simple Javascript image compressor which takes help of the Browser's native <code>canvas.toBlob</code> API to compress the images without disturbing the quality.</p>
 
                     <div className='wrap-input' style={{textAlign: 'center'}}>
                         <label className='containFile'>
