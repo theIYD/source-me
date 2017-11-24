@@ -13,6 +13,7 @@
 - <strong>Epsum Generator from [bacon ipsum](https://baconipsum.com/)</strong>
 - <strong>URL Shortner</strong>
 - <strong>Emoji Picker</strong>
+- <strong>Image Compressor</strong>
 
 <br>
 
