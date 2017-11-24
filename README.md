@@ -1,5 +1,5 @@
 # Source me
-<em>Version: 0.1.1</em>
+<em>Version: 0.2.1</em>
 
 ![screenshot](src/assets/images/screenshot.PNG)
 
