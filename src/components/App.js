@@ -2,8 +2,6 @@ import '../assets/css/App.scss';
 import React, { Component } from 'react';
 import Nav from './Nav';
 
-const remote = require('electron').remote;
-
 import CDN from './sub-components/CDN/CDN';
 import Font from './sub-components/Font/Font';
 import Colors from './sub-components/Colors/Colors';
@@ -11,6 +9,7 @@ import Icons from './sub-components/Icons/Icons';
 import Epsum from './sub-components/Epsum/Epsum';
 import URLShortener from './sub-components/URLShortener/URLShortener';
 import EmojiPicker from './sub-components/EmojiPicker/EmojiPicker';
+import ImageCompressor from './sub-components/ImageCompressor/ImageCompressor';
 
 import Home from './Home';
 
@@ -54,6 +53,10 @@ const routes = [
   {
     path: '/emojis',
     main: () => <EmojiPicker url='https://raw.githubusercontent.com/theIYD/source-me/development/src/components/sub-components/EmojiPicker/emojis.json' />
+  },
+  {
+    path: '/imagecompress',
+    main: () => <ImageCompressor />
   }
 ];
 
@@ -70,31 +73,11 @@ class App extends Component {
     this._isMounted = false;  
   }
 
-  closeWindow() {
-    let currentWindow = remote.getCurrentWindow();
-    currentWindow.close();
-  }
-
   render() {
     return (
       <div id="app">
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet" />
-        {(process.platform === 'win32') ? null : (
-          <button onClick={this.closeWindow.bind(this)} style={{
-            position: 'absolute',
-            top: '20px',
-            right: '20px',
-            zIndex: '999999',
-            background: 'transparent',
-            border: 'none',
-            fontWeight: 'bold',
-            WebkitTextStroke: '2px',
-            cursor: 'pointer'
-          }} id="close" type="button">
-            <span><i className="material-icons">&#xE5CD;</i></span>
-          </button>
-        )}
         <Router>
           <Switch>
             <div style={{display: 'flex', height: '100%'}}>

@@ -4,3 +4,4 @@ node_modules/
 dist/
 builds/
 .env
+release-builds/
