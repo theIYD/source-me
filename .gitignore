@@ -5,3 +5,4 @@ dist/
 builds/
 .env
 release-builds/
+electron-packager/

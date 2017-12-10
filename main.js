@@ -18,14 +18,16 @@ if ( process.defaultApp || /[\\/]electron-prebuilt[\\/]/.test(process.execPath) 
 function createWindow() {
   // Create the browser window.
   let config = {
+    title: 'SourceMe',
     width: 1024,
     height: 840,
     backgroundColor: '#7E57C2',
     autoHideMenuBar: true,
     icon: path.join(__dirname, 'src/assets/icons/linux/iconLinux.png'),
-    resizable: false,
-    maximizable: false,
-    show: false
+    resizable: process.platform === 'darwin',
+    maximizable: process.platform === 'darwin',
+    show: false,
+    titleBarStyle: 'hiddenInset'
   }
   mainWindow = new BrowserWindow(config);
 
