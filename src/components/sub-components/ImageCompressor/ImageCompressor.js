@@ -5,9 +5,6 @@ import compressImage from '@xkeshi/image-compressor';
 class ImageCompressor extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            isCompress: false
-        }
         this.setImage = this.setImage.bind(this);
     }
 
@@ -25,9 +22,6 @@ class ImageCompressor extends Component {
         })
         .then((result) => {
             FileSaver.saveAs(result, result.name);
-            this.setState({
-                isCompress: true
-            });
 
         }).catch((err) => {
             console.log(err);
@@ -47,7 +41,6 @@ class ImageCompressor extends Component {
                             Choose an image
                             <input onChange={event => this.setImage(event)} type="file" id="file" accept="image/*" />
                         </label>
-                        <p>{(this.state.isCompress) ? 'The compressed image was saved': null}</p>
                     </div>
                 </section>
             </div>
