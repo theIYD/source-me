@@ -31,6 +31,7 @@ A tool which compresses your images quickly. It uses <a href="https://github.com
 <a href="https://github.com/theIYD/source-me/releases">Download the latest version of Source me from the releases page</a>
 
 ## Build
+The app can be used locally by following commands:
 
 ```bash
 $ git clone https://github.com/theIYD/source-me.git
@@ -39,6 +40,3 @@ $ npm install
 $ npm run dev
 ```
 
-## Built with
-- [React.js](https://reactjs.org/)
-- [Electron.js](https://electronjs.org/)
