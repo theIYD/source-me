@@ -40,3 +40,5 @@ $ npm install
 $ npm run dev
 ```
 
+<strong>The application has been abandoned and further updates have been stopped.</strong>
+
